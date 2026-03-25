@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwovo7iw22wy"
-path="res://.godot/imported/mago_spritesheet.png-6a6b10c6a32b2d0d873b0d0ee0263d46.ctex"
+uid="uid://cc8lanqwl8xcy"
+path="res://.godot/imported/Space Background.png-f802514555b57c671e3fe587d6770700.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://escenas/mago_spritesheet.png"
-dest_files=["res://.godot/imported/mago_spritesheet.png-6a6b10c6a32b2d0d873b0d0ee0263d46.ctex"]
+source_file="res://escenas/Space Background.png"
+dest_files=["res://.godot/imported/Space Background.png-f802514555b57c671e3fe587d6770700.ctex"]
 
 [params]
 

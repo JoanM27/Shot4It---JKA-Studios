@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c8j3ti1r2eany"]
+
+[ext_resource type="Texture2D" uid="uid://cc8lanqwl8xcy" path="res://escenas/Space Background.png" id="1_wgmnp"]
+
+[node name="Fondo" type="Node2D" unique_id=37255365]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=665697459]
+position = Vector2(574.1875, 329.78125)
+scale = Vector2(1.139625, 1.3048751)
+texture = ExtResource("1_wgmnp")
+vframes = 2
