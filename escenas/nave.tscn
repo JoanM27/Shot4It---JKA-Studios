@@ -67,6 +67,7 @@ radius = 5.0
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1506147809]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1753851258]
+position = Vector2(-1, 0)
 script = ExtResource("1_iaarx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1993617354]

@@ -15,6 +15,12 @@ run/main_scene="uid://dsj54j1vn5p68"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[layer_names]
+
+2d_physics/layer_1="Proyectiles"
+2d_physics/layer_2="Colisiones"
+2d_physics/layer_3="pared invisible"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
