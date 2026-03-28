@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Area2D
 
 var pintura_jugador1: float = 0.0
 var pintura_jugador2: float = 0.0
@@ -11,5 +11,3 @@ func recibir_proyectil(id_jugador, color):
 	else:
 		pintura_jugador2 += 5.0
 		print("Cubeta J2: ", pintura_jugador2)
-	
-	

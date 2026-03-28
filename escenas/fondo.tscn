@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c8j3ti1r2eany"]
 
-[ext_resource type="Texture2D" uid="uid://cc8lanqwl8xcy" path="res://escenas/Space Background.png" id="1_wgmnp"]
+[ext_resource type="Texture2D" uid="uid://cc8lanqwl8xcy" path="res://assets/Space Background.png" id="1_wgmnp"]
 
 [node name="Fondo" type="Node2D" unique_id=37255365]
 

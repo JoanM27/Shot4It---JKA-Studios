@@ -1,8 +1,12 @@
 [gd_scene format=4 uid="uid://dm3rnwmdyfksj"]
 
-[ext_resource type="Script" uid="uid://dbhiwnb1lxym6" path="res://escenas/board.gd" id="1_drtnj"]
+[ext_resource type="Script" uid="uid://bcqt2mtpv1spa" path="res://escenas/tablero.gd" id="1_nf558"]
 [ext_resource type="Texture2D" uid="uid://fgvjesb80vdg" path="res://assets/cajas.png" id="2_nf558"]
 [ext_resource type="Texture2D" uid="uid://swqity5kq06h" path="res://assets/board.png" id="3_811ow"]
+[ext_resource type="Script" uid="uid://cuhd4m14x2ke5" path="res://escenas/tile_map_layer.gd" id="3_nf558"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_heww1"]
+size = Vector2(86, 11)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ecjf"]
 resource_name = "fichas"
@@ -60,30 +64,27 @@ texture_region_size = Vector2i(10, 10)
 
 [sub_resource type="TileSet" id="TileSet_cike7"]
 tile_size = Vector2i(12, 12)
-physics_layer_0/collision_layer = 3
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_0ecjf")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_heww1"]
-size = Vector2(160, 93)
+[node name="tablero" type="AnimatableBody2D" unique_id=910256718]
+scale = Vector2(4, 4)
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_nf558")
 
-[node name="Pack_tablero" type="Node2D" unique_id=1845077339]
-position = Vector2(70, 66)
-
-[node name="Board" type="StaticBody2D" parent="." unique_id=110748321]
-position = Vector2(70, -2)
-script = ExtResource("1_drtnj")
-
-[node name="TileMapLayer" type="TileMapLayer" parent="Board" unique_id=1458894519]
-position = Vector2(6, -3)
-tile_map_data = PackedByteArray("AAD8/wEAAAAAAAIAAAD8/wAAAAAAAAIAAAD8////AAAAAAIAAAD8//7/AAAAAAIAAAD8//3/AAAAAAIAAAD9//3/AAAAAAIAAAD9//7/AAAAAAIAAAD+//3/AAAAAAIAAAD+//7/AAAAAAIAAAD///3/AAAAAAIAAAD///7/AAAAAAIAAAAAAP3/AAAAAAIAAAAAAP7/AAAAAAIAAAABAP3/AAAAAAIAAAABAP7/AAAAAAIAAAACAP3/AAAAAAIAAAACAP7/AAAAAAIAAAACAP//AAAAAAIAAAACAAAAAAAAAAIAAAACAAEAAAAAAAIAAAACAAIAAAAAAAIAAAABAAIAAAAAAAIAAAABAAEAAAAAAAIAAAABAAAAAAAAAAIAAAABAP//AAAAAAIAAAAAAP//AAAAAAIAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAIAAAAAAAIAAAAAAAIAAAD//wIAAAAAAAIAAAD//wEAAAAAAAIAAAD+/wEAAAAAAAIAAAD+/wAAAAAAAAIAAAD//wAAAAAAAAIAAAD/////AAAAAAIAAAD+////AAAAAAIAAAD+/wIAAAAAAAIAAAD9/wIAAAAAAAIAAAD9/wEAAAAAAAIAAAD9/wAAAAAAAAIAAAD9////AAAAAAIAAAD8/wIAAAAAAAIAAAD8/wMAAAAAAAAAAAD9/wMAAAAAAAAAAAD+/wMAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_cike7")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Board" unique_id=1078474017]
-position = Vector2(0, 0.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1078474017]
+position = Vector2(-1.7094051, 39.782146)
 shape = SubResource("RectangleShape2D_heww1")
 
-[node name="Sprite2D" type="Sprite2D" parent="Board" unique_id=1244933352]
-z_index = -1
-texture = ExtResource("3_811ow")
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1458894519]
+position = Vector2(4.2735047, -2.8415818)
+tile_map_data = PackedByteArray("AAD8/wEAAAAAAAIAAAD8/wAAAAAAAAIAAAD8////AAAAAAIAAAD8//7/AAAAAAIAAAD8//3/AAAAAAIAAAD9//3/AAAAAAIAAAD9//7/AAAAAAIAAAD+//3/AAAAAAIAAAD+//7/AAAAAAIAAAD///3/AAAAAAIAAAD///7/AAAAAAIAAAAAAP3/AAAAAAIAAAAAAP7/AAAAAAIAAAABAP3/AAAAAAIAAAABAP7/AAAAAAIAAAACAP3/AAAAAAIAAAACAP7/AAAAAAIAAAACAP//AAAAAAIAAAACAAAAAAAAAAIAAAACAAEAAAAAAAIAAAACAAIAAAAAAAIAAAABAAIAAAAAAAIAAAABAAEAAAAAAAIAAAABAAAAAAAAAAIAAAABAP//AAAAAAIAAAAAAP//AAAAAAIAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAIAAAAAAAIAAAAAAAIAAAD//wIAAAAAAAIAAAD//wEAAAAAAAIAAAD+/wEAAAAAAAIAAAD+/wAAAAAAAAIAAAD//wAAAAAAAAIAAAD/////AAAAAAIAAAD+////AAAAAAIAAAD+/wIAAAAAAAIAAAD9/wIAAAAAAAIAAAD9/wEAAAAAAAIAAAD9/wAAAAAAAAIAAAD9////AAAAAAIAAAD8/wIAAAAAAAIAAAD8/wMAAAAAAAAAAAD9/wMAAAAAAAAAAAD+/wMAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_cike7")
+script = ExtResource("3_nf558")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Board" unique_id=1827731491]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1244933352]
+z_index = -1
+position = Vector2(-1.709402, 0)
+texture = ExtResource("3_811ow")

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dsj54j1vn5p68" path="res://escenas/nave.tscn" id="1_mt5rx"]
 [ext_resource type="PackedScene" uid="uid://dm3rnwmdyfksj" path="res://escenas/pack_tablero.tscn" id="2_rcdd3"]
-[ext_resource type="PackedScene" path="res://escenas/fondo.tscn" id="3_rcdd3"]
+[ext_resource type="PackedScene" uid="uid://c8j3ti1r2eany" path="res://escenas/fondo.tscn" id="3_rcdd3"]
 
 [node name="Prueba" type="Node2D" unique_id=1436926508]
 
@@ -13,10 +13,9 @@ scale = Vector2(0.49578682, 0.49578682)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=431170223]
 
 [node name="Pack_tablero" parent="." unique_id=1845077339 instance=ExtResource("2_rcdd3")]
-position = Vector2(-256, -128.00002)
-scale = Vector2(3.6412625, 3.6412625)
+position = Vector2(1.9999695, -95)
 
 [node name="Fondo" parent="." unique_id=37255365 instance=ExtResource("3_rcdd3")]
 z_index = -2
-position = Vector2(-2348, -866)
+position = Vector2(-2348, -859)
 scale = Vector2(3.7908418, 3.7908418)

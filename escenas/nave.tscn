@@ -1,98 +1,55 @@
 [gd_scene format=3 uid="uid://dsj54j1vn5p68"]
 
 [ext_resource type="Script" uid="uid://4tdfyapbs241" path="res://character_body_2d.gd" id="1_iaarx"]
-[ext_resource type="Texture2D" uid="uid://biqcqofuj8vwf" path="res://assets/nave_black.png" id="2_ya8gc"]
-[ext_resource type="Script" uid="uid://cosnc3gqyrt45" path="res://bala.gd" id="3_4s6vm"]
-[ext_resource type="Texture2D" uid="uid://dnbv74ffa7c0q" path="res://assets/All_Fire_Bullet_Pixel_16x16.png" id="4_w4uoq"]
+[ext_resource type="Texture2D" uid="uid://bfvltwtmbkopc" path="res://assets/nave_amarilla.png" id="2_4s6vm"]
+[ext_resource type="PackedScene" uid="uid://cw3pi2jfm7hs0" path="res://bala_area.tscn" id="2_iaarx"]
+[ext_resource type="Texture2D" uid="uid://c4ufhrnn0oytg" path="res://assets/nave_azul.png" id="3_w4uoq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j1vys"]
-atlas = ExtResource("2_ya8gc")
-region = Rect2(0, 0, 256, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1uvw"]
+atlas = ExtResource("2_4s6vm")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf1us"]
+atlas = ExtResource("3_w4uoq")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jemat"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j1vys")
+"texture": SubResource("AtlasTexture_t1uvw")
 }],
 "loop": true,
-"name": &"iddle",
+"name": &"estandar_amarillo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pf1us")
+}],
+"loop": true,
+"name": &"estandar_azul",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_53dx7"]
 size = Vector2(122, 93)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6rt8y"]
-atlas = ExtResource("4_w4uoq")
-region = Rect2(256, 160, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1poy6"]
-atlas = ExtResource("4_w4uoq")
-region = Rect2(272, 160, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xqbh8"]
-atlas = ExtResource("4_w4uoq")
-region = Rect2(288, 160, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xrwbh"]
-atlas = ExtResource("4_w4uoq")
-region = Rect2(304, 160, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ij32g"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6rt8y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1poy6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xqbh8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xrwbh")
-}],
-"loop": true,
-"name": &"proyectile",
-"speed": 5.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_gi7du"]
-radius = 5.0
-
 [node name="PackNave" type="Node2D" unique_id=499134470]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1753851258]
+[node name="nave" type="CharacterBody2D" parent="." unique_id=1753851258]
 position = Vector2(-1, 0)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_iaarx")
+bala = ExtResource("2_iaarx")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1993617354]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="nave" unique_id=1993617354]
+position = Vector2(-1, 0)
+scale = Vector2(3.8347454, 3.8347454)
 sprite_frames = SubResource("SpriteFrames_jemat")
-animation = &"iddle"
+animation = &"estandar_amarillo"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=492779794]
-position = Vector2(-1, 4.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nave" unique_id=492779794]
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_53dx7")
-
-[node name="Bala" type="Area2D" parent="." unique_id=2036373130]
-position = Vector2(-1, -93)
-rotation = -1.5707964
-scale = Vector2(2.6558983, 2.6810977)
-script = ExtResource("3_4s6vm")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bala" unique_id=375696293]
-sprite_frames = SubResource("SpriteFrames_ij32g")
-animation = &"proyectile"
-frame_progress = 0.7801583
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bala" unique_id=1857562886]
-position = Vector2(2.6660004, 0.31581753)
-shape = SubResource("CircleShape2D_gi7du")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=199489179]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D" unique_id=160206957]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=712081844]

@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends AnimatableBody2D
 
 var pintura_jugador1: float = 0.0
 var pintura_jugador2: float = 0.0
