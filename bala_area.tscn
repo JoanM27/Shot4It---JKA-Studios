@@ -166,12 +166,15 @@ animations = [{
 }]
 
 [node name="bala_area" type="Area2D" unique_id=471613102]
+z_index = 1
 rotation = -1.5707964
 scale = Vector2(2, 2)
+collision_layer = 65280
+collision_mask = 65280
 script = ExtResource("1_21rw1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=311111986]
-position = Vector2(1.1295608, 5.3676754e-08)
+position = Vector2(0, 7.1054274e-15)
 rotation = -1.5707964
 scale = Vector2(0.20125695, 0.36125708)
 shape = SubResource("RectangleShape2D_jgwpk")
@@ -179,4 +182,4 @@ shape = SubResource("RectangleShape2D_jgwpk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=359477322]
 rotation = 1.5707964
 sprite_frames = SubResource("SpriteFrames_vph68")
-animation = &"chocar_proyectil_azul"
+animation = &"estandar_proyectil_azul"

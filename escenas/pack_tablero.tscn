@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cuhd4m14x2ke5" path="res://escenas/tile_map_layer.gd" id="3_nf558"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_heww1"]
-size = Vector2(86, 11)
+size = Vector2(10, 9.749999)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ecjf"]
 resource_name = "fichas"
@@ -64,18 +64,80 @@ texture_region_size = Vector2i(10, 10)
 
 [sub_resource type="TileSet" id="TileSet_cike7"]
 tile_size = Vector2i(12, 12)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 0
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_0ecjf")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nf558"]
+size = Vector2(159.5, 93)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_811ow"]
+size = Vector2(86.5, 3.75)
+
 [node name="tablero" type="AnimatableBody2D" unique_id=910256718]
 scale = Vector2(4, 4)
-collision_layer = 8
-collision_mask = 8
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_nf558")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1078474017]
-position = Vector2(-1.7094051, 39.782146)
+[node name="Entradas" type="Node2D" parent="." unique_id=740086403]
+position = Vector2(0, 1.5)
+
+[node name="entrada1" type="Area2D" parent="Entradas" unique_id=259241059]
+collision_layer = 256
+collision_mask = 256
+
+[node name="C1" type="CollisionShape2D" parent="Entradas/entrada1" unique_id=1078474017]
+position = Vector2(-37.75, 39.125)
+scale = Vector2(1, 0.98)
+shape = SubResource("RectangleShape2D_heww1")
+
+[node name="entrada2" type="Area2D" parent="Entradas" unique_id=413475291]
+collision_layer = 512
+collision_mask = 512
+
+[node name="C2" type="CollisionShape2D" parent="Entradas/entrada2" unique_id=351210485]
+position = Vector2(-25.75, 39.25)
+shape = SubResource("RectangleShape2D_heww1")
+
+[node name="entrada3" type="Area2D" parent="Entradas" unique_id=1637407162]
+collision_layer = 1024
+collision_mask = 1024
+
+[node name="C3" type="CollisionShape2D" parent="Entradas/entrada3" unique_id=1287922872]
+position = Vector2(-14, 39.25)
+shape = SubResource("RectangleShape2D_heww1")
+
+[node name="entrada4" type="Area2D" parent="Entradas" unique_id=1239900049]
+collision_layer = 2048
+collision_mask = 2048
+
+[node name="C4" type="CollisionShape2D" parent="Entradas/entrada4" unique_id=257899916]
+position = Vector2(-1.5, 39.25)
+shape = SubResource("RectangleShape2D_heww1")
+
+[node name="entrada5" type="Area2D" parent="Entradas" unique_id=720748055]
+collision_layer = 4096
+collision_mask = 4096
+
+[node name="C5" type="CollisionShape2D" parent="Entradas/entrada5" unique_id=341243510]
+position = Vector2(10.25, 39.25)
+shape = SubResource("RectangleShape2D_heww1")
+
+[node name="entrada6" type="Area2D" parent="Entradas" unique_id=1008358883]
+collision_layer = 8192
+collision_mask = 8192
+
+[node name="C6" type="CollisionShape2D" parent="Entradas/entrada6" unique_id=739530676]
+position = Vector2(22.5, 39.25)
+shape = SubResource("RectangleShape2D_heww1")
+
+[node name="entrada7" type="Area2D" parent="Entradas" unique_id=659128108]
+collision_layer = 16384
+collision_mask = 16384
+
+[node name="C7" type="CollisionShape2D" parent="Entradas/entrada7" unique_id=1899898819]
+position = Vector2(34.25, 39.25)
 shape = SubResource("RectangleShape2D_heww1")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1458894519]
@@ -88,3 +150,16 @@ script = ExtResource("3_nf558")
 z_index = -1
 position = Vector2(-1.709402, 0)
 texture = ExtResource("3_811ow")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1291070030]
+position = Vector2(-2, 0.25)
+shape = SubResource("RectangleShape2D_nf558")
+
+[node name="Muro" type="Area2D" parent="." unique_id=573687341]
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Muro" unique_id=493642297]
+position = Vector2(-2.25, 32.125)
+shape = SubResource("RectangleShape2D_811ow")
+debug_color = Color(0.70196074, 0, 0.3685291, 0.41960785)
