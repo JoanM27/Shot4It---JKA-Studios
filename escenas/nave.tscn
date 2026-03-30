@@ -34,8 +34,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_53dx7"]
-size = Vector2(122, 93)
+[sub_resource type="CircleShape2D" id="CircleShape2D_4s6vm"]
+radius = 64.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w4uoq"]
 atlas = ExtResource("5_4s6vm")
@@ -121,7 +121,6 @@ animations = [{
 }]
 
 [node name="nave" type="CharacterBody2D" unique_id=1753851258]
-position = Vector2(-1, 0)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_4s6vm")
@@ -134,8 +133,8 @@ sprite_frames = SubResource("SpriteFrames_jemat")
 animation = &"estandar_amarillo"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=492779794]
-position = Vector2(-1, 0)
-shape = SubResource("RectangleShape2D_53dx7")
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_4s6vm")
 
 [node name="AspectoDisparo" type="AnimatedSprite2D" parent="." unique_id=1130236196]
 position = Vector2(-1, -56.000004)
