@@ -4,7 +4,8 @@ signal Win(player)
 signal Stalemate
 
 @export var tilemap: TileMapLayer # Arrastra tu nodo TileMapLayer aquí en el inspector
-
+@onready var animar_propulsor_derecho = $NavaNodriza/PropulsorDerecho
+@onready var animar_propulsor_izquierdo = $NavaNodriza/PropulsorIzquierdo
 # La celda base vacía según tu TileSet (0:2 es ficha_vacia)
 const CELDA_VACIA = Vector2i(0, 2)
 
@@ -16,6 +17,10 @@ var columns = [
 ]
 
 func _ready() -> void:
+	
+	#iniciar propulsores #
+	animar_propulsor_derecho.play("Estandar")
+	animar_propulsor_izquierdo.play("Estandar")
 	# Limpiamos el tablero visualmente por si acaso
 	for x in range(7):
 		for y in range(6):

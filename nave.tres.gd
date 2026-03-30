@@ -9,6 +9,7 @@ var sufijo_color: String = ""
 
 @onready var animar_nave = $AspectoNave
 @onready var animar_disparo = $AspectoDisparo
+@onready var animar_propulsor = $LlamaPropulsor
 
 # --- Variables de Movimiento --- #
 @export var VELOCIDAD_MAXIMA = 700.0
@@ -35,6 +36,7 @@ var btn_disparar: String
 func _ready():
 	sufijo_color = "_amarillo" if id_jugador == 1 else "_azul"
 	animar_nave.play("estandar" + sufijo_color)
+	animar_propulsor.play("estandar")
 	
 	btn_izq = "izquierda_" + str(id_jugador)
 	btn_der = "derecha_" + str(id_jugador)
@@ -62,9 +64,11 @@ func _physics_process(delta: float) -> void:
 	if direccion.x != 0:
 		animar_nave.skew = lerp(animar_nave.skew, direccion.x * 0.2, 0.1)
 		animar_disparo.skew = lerp(animar_disparo.skew, direccion.x * 0.2, 0.1)
+		animar_propulsor.skew= lerp(animar_propulsor.skew, direccion.x * 0.15, 0.1)
 	else:
 		animar_nave.skew = lerp(animar_nave.skew, 0.0, 0.1)
 		animar_disparo.skew = lerp(animar_disparo.skew, 0.0, 0.1)
+		animar_propulsor.skew= lerp(animar_propulsor.skew, 0.0, 0.1)
 		
 	# === LÓGICA DE REBOTE DE COLISIÓN (TIPO BILLAR) ===
 	for i in get_slide_collision_count():

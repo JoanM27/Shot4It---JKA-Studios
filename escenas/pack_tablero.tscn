@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://detkkapydyjoj" path="res://escenas/entrada_5.gd" id="8_7tn3l"]
 [ext_resource type="Script" uid="uid://dc3mkydd6f4m" path="res://escenas/entrada_6.gd" id="9_djxd8"]
 [ext_resource type="Script" uid="uid://b8gl12ox0itgg" path="res://escenas/entrada_7.gd" id="10_djxd8"]
+[ext_resource type="SpriteFrames" uid="uid://c3hluria3tsu2" path="res://assets/propulsorGrande.tres" id="12_xw4v6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ecjf"]
 resource_name = "fichas"
@@ -235,10 +236,24 @@ tilemap = NodePath("../..")
 position = Vector2(34.25, 39.25)
 shape = SubResource("RectangleShape2D_heww1")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1244933352]
+[node name="NavaNodriza" type="Sprite2D" parent="." unique_id=1244933352]
 z_index = -1
 position = Vector2(-1.709402, 0)
 texture = ExtResource("3_811ow")
+
+[node name="PropulsorIzquierdo" type="AnimatedSprite2D" parent="NavaNodriza" unique_id=848500816]
+z_index = 1
+position = Vector2(-62.0406, 63)
+sprite_frames = ExtResource("12_xw4v6")
+animation = &"Estandar"
+frame_progress = 0.2070729
+
+[node name="PropulsorDerecho" type="AnimatedSprite2D" parent="NavaNodriza" unique_id=2115291617]
+position = Vector2(60.9594, 63)
+scale = Vector2(-1, 1)
+sprite_frames = ExtResource("12_xw4v6")
+animation = &"Estandar"
+frame_progress = 0.36805388
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1291070030]
 position = Vector2(-2, 0.25)

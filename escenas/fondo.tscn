@@ -2,7 +2,18 @@
 
 [ext_resource type="Texture2D" uid="uid://cc8lanqwl8xcy" path="res://assets/Space Background.png" id="1_wgmnp"]
 
-[node name="Fondo" type="Node2D" unique_id=37255365]
+[sub_resource type="Animation" id="Animation_wgmnp"]
+resource_name = "recorrido"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ghod"]
+_data = {
+&"recorrido": SubResource("Animation_wgmnp")
+}
+
+[node name="Fondo" type="AnimatableBody2D" unique_id=1779898747]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=39449606]
+libraries/ = SubResource("AnimationLibrary_0ghod")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=665697459]
 position = Vector2(574.1875, 329.78125)

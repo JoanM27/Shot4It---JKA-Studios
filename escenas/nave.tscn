@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c4ufhrnn0oytg" path="res://assets/nave_azul.png" id="3_w4uoq"]
 [ext_resource type="Texture2D" uid="uid://bneft4pl68lvj" path="res://assets/proyectil_amarillo.png" id="5_4s6vm"]
 [ext_resource type="Texture2D" uid="uid://dmhs4fxuxeimd" path="res://assets/proyectil_azul.png" id="6_w4uoq"]
+[ext_resource type="SpriteFrames" uid="uid://dx24q8h5xxv58" path="res://assets/Propulsor.tres" id="7_w4uoq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t1uvw"]
 atlas = ExtResource("2_4s6vm")
@@ -143,3 +144,10 @@ sprite_frames = SubResource("SpriteFrames_7oupo")
 animation = &"disparo_amarillo"
 frame = 4
 frame_progress = 1.0
+
+[node name="LlamaPropulsor" type="AnimatedSprite2D" parent="." unique_id=1723511457]
+position = Vector2(-1, 66.00001)
+scale = Vector2(3.1465623, 3.6064587)
+sprite_frames = ExtResource("7_w4uoq")
+animation = &"estandar"
+frame_progress = 0.5765381
