@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var bala: PackedScene
 
 # --- Jugador --- #
-@export var id_jugador: int = 2
+@export var id_jugador: int = 1
 @export var sufijo_color: String = "_amarillo" if id_jugador == 1 else "_azul"
 
 @onready var animar_nave = $AspectoNave

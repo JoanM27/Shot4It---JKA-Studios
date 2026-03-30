@@ -51,8 +51,9 @@ func pegar_al_collider(collider: Node) -> void:
 	set_physics_process(false)
 	
 	# 2. Desactivar colisiones para evitar problemas
-	monitoring = false
-	monitorable = false
+	set_deferred("monitoring", false)
+	set_deferred("monitorable", false)
+	
 	if has_node("CollisionShape2D"):
 		$CollisionShape2D.set_deferred("disabled", true)
 	

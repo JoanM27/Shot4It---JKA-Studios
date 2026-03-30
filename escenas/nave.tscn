@@ -120,27 +120,24 @@ animations = [{
 "speed": 50.0
 }]
 
-[node name="PackNave" type="Node2D" unique_id=499134470]
-
-[node name="nave" type="CharacterBody2D" parent="." unique_id=1753851258]
+[node name="nave" type="CharacterBody2D" unique_id=1753851258]
 position = Vector2(-1, 0)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_4s6vm")
 bala = ExtResource("2_iaarx")
-id_jugador = 1
 
-[node name="AspectoNave" type="AnimatedSprite2D" parent="nave" unique_id=1993617354]
+[node name="AspectoNave" type="AnimatedSprite2D" parent="." unique_id=1993617354]
 position = Vector2(-1, 0)
 scale = Vector2(3.8347454, 3.8347454)
 sprite_frames = SubResource("SpriteFrames_jemat")
 animation = &"estandar_amarillo"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="nave" unique_id=492779794]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=492779794]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_53dx7")
 
-[node name="AspectoDisparo" type="AnimatedSprite2D" parent="nave" unique_id=1130236196]
+[node name="AspectoDisparo" type="AnimatedSprite2D" parent="." unique_id=1130236196]
 position = Vector2(-1, -56.000004)
 scale = Vector2(9.152668, 9.152668)
 sprite_frames = SubResource("SpriteFrames_7oupo")
