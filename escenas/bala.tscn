@@ -172,7 +172,7 @@ collision_layer = 8
 collision_mask = 8
 script = ExtResource("1_2qn40")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2025687800]
+[node name="entrada 1" type="CollisionShape2D" parent="." unique_id=2025687800]
 position = Vector2(1.1295608, 5.3676754e-08)
 rotation = -1.5707964
 scale = Vector2(0.20125695, 0.36125708)
