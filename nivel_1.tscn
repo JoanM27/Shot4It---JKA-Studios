@@ -8,6 +8,4 @@
 [node name="Escena_Juego" parent="." unique_id=1566723946 instance=ExtResource("1_eciuy")]
 scale = Vector2(0.26751256, 0.26751256)
 
-[node name="Camera2D" type="Camera2D" parent="Escena_Juego" unique_id=1930379727]
-
 [node name="Fondo" parent="." unique_id=1350129918 instance=ExtResource("2_2lask")]

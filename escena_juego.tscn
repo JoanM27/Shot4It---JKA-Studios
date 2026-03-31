@@ -39,9 +39,9 @@ tracks/0/path = NodePath(".:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 2, 2, 2, 2),
-"points": PackedFloat32Array(8, -0.25, 0, 0.25, 0, 326.67712, -2.4222224, -53.112854, 0, 0, -4.083464, -1.8722224, 55.126762, 0, 0, -326.67712, -2.5777776, 53.765614, 0, 0, 0, -3.0222225, -54.44619, 0, 0),
-"times": PackedFloat32Array(0, 14.533334, 25.766668, 41.233334, 59.36667)
+"handle_modes": PackedInt32Array(0, 0, 2, 0, 2, 2, 2, 2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -240.92436, -1.9222224, 40.613426, 1.4277778, -30.166616, -424.68027, -3.3500001, 70.780045, 0, 0, -240.92436, -1.9222224, 40.613426, 1.4277778, -30.166616, 0, -1.3555559, -40.15406, 0, 0, 359.34485, -1.3222225, -59.890812, 0, 0, 449.18103, -1.2222221, -14.972698, 0, 0, 359.34482, -1.3000005, 14.972703, 0, 0, 0, -1.1611106, 59.89081, 0, 0),
+"times": PackedFloat32Array(0, 11.533334, 20.1, 28.733334, 36.86667, 44.800003, 52.133335, 59.93334, 66.9)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -50,9 +50,9 @@ tracks/1/path = NodePath(".:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 2, 2, 2, 2),
-"points": PackedFloat32Array(-176, -0.25, 0, 0.25, 0, -130.67084, -2.4222224, -7.5548606, 0, 0, -224.59052, -1.8722224, 15.65328, 0, 0, -130.67084, -2.5777776, -15.65328, 0, 0, -163.33856, -3.0222225, 5.444621, 0, 0),
-"times": PackedFloat32Array(0, 14.533334, 25.766668, 41.233334, 59.36667)
+"handle_modes": PackedInt32Array(0, 2, 2, 0, 2, 2, 2, 2, 2),
+"points": PackedFloat32Array(-196.00627, -0.25, 0, 0.25, 0, -163.33856, -1.9222224, 0, 1.4277778, 0, -196.00627, -3.3500001, 0, 0, 0, -163.33856, -1.9222224, 0, 1.4277778, 0, -196.00627, -1.3555559, 5.4446187, 0, 0, -163.33856, -1.3222225, -5.444618, 0, 0, -196.00627, -1.2222221, 5.4446187, 0, 0, -163, -1.3000005, 0, 0, 0, -196.006, -1.1611106, 5.501, 0, 0),
+"times": PackedFloat32Array(0, 11.533334, 20.1, 28.733334, 36.86667, 44.800003, 52.133335, 59.93334, 66.9)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_negk1"]
@@ -87,26 +87,6 @@ position = Vector2(8, -176)
 libraries/ = SubResource("AnimationLibrary_negk1")
 autoplay = &"movimiento_base"
 
-[node name="Paredes" type="StaticBody2D" parent="." unique_id=1428471715]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes" unique_id=1458647488]
-position = Vector2(-9, 325)
-shape = SubResource("SegmentShape2D_rcdd3")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Paredes" unique_id=1725695364]
-position = Vector2(-43, -329)
-shape = SubResource("SegmentShape2D_i5a71")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Paredes" unique_id=1501702904]
-position = Vector2(-640, -72)
-shape = SubResource("SegmentShape2D_i2p14")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Paredes" unique_id=578114979]
-position = Vector2(616, -44)
-shape = SubResource("SegmentShape2D_2tsr8")
-
 [node name="Jugadores" type="Node2D" parent="." unique_id=635328412]
 position = Vector2(-160, 240)
 scale = Vector2(0.5, 0.5)
@@ -116,3 +96,25 @@ position = Vector2(560, 10)
 id_jugador = 2
 
 [node name="Jugador1" parent="Jugadores" unique_id=103557005 instance=ExtResource("2_4kdet")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=66831604]
+
+[node name="Paredes" type="StaticBody2D" parent="Camera2D" unique_id=1428471715]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Paredes" unique_id=1458647488]
+position = Vector2(-9, 325)
+shape = SubResource("SegmentShape2D_rcdd3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Camera2D/Paredes" unique_id=1725695364]
+position = Vector2(-43, -329)
+shape = SubResource("SegmentShape2D_i5a71")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Camera2D/Paredes" unique_id=1501702904]
+position = Vector2(-640, -72)
+shape = SubResource("SegmentShape2D_i2p14")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Camera2D/Paredes" unique_id=578114979]
+position = Vector2(616, -44)
+shape = SubResource("SegmentShape2D_2tsr8")

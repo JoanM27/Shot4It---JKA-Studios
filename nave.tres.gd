@@ -13,11 +13,11 @@ var sufijo_color: String = ""
 
 # --- Variables de Movimiento --- #
 @export var VELOCIDAD_MAXIMA = 350.0
-@export var ACELERACION = 750.0
-@export var FRICCION = 600.0
+@export var ACELERACION = 400.0
+@export var FRICCION = 400.0
 
 # --- Variables de Rebote --- #
-@export var REBOTE_BASE: float = 150.0 # Un empujoncito mínimo garantizado
+@export var REBOTE_BASE: float = 80.0 # Un empujoncito mínimo garantizado
 @export var MULTIPLICADOR_CHOQUE: float = 0.1 # Qué tanto afecta la velocidad al choque
 
 # --- Variables de Disparo --- #
