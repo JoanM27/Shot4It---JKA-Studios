@@ -1,6 +1,6 @@
 extends Area2D
 
-var velocidad: float = 600.0
+var velocidad: float = 300.0
 var sufijo_color: String = ""
 var id_dueno: int = 0
 

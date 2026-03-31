@@ -1,62 +1,16 @@
 [gd_scene format=3 uid="uid://bop6xo4qlh8u3"]
 
-[ext_resource type="PackedScene" uid="uid://dsj54j1vn5p68" path="res://escenas/nave.tscn" id="1_mt5rx"]
-[ext_resource type="PackedScene" uid="uid://dm3rnwmdyfksj" path="res://escenas/pack_tablero.tscn" id="2_rcdd3"]
+[ext_resource type="Script" uid="uid://ds2ocdeo480o4" path="res://prueba.gd" id="1_i5a71"]
+[ext_resource type="Script" uid="uid://b64k7443wm08i" path="res://camera_2d.gd" id="2_i2p14"]
+[ext_resource type="PackedScene" uid="uid://bp54p3snnl65s" path="res://escena_juego.tscn" id="3_i5a71"]
 [ext_resource type="PackedScene" uid="uid://c8j3ti1r2eany" path="res://escenas/fondo.tscn" id="3_rcdd3"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_rcdd3"]
-a = Vector2(585, -5)
-b = Vector2(-567, -5)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_i5a71"]
-a = Vector2(-541, 9)
-b = Vector2(627, 9)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_i2p14"]
-a = Vector2(0, -296)
-b = Vector2(0, 344)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_2tsr8"]
-a = Vector2(24, -320)
-b = Vector2(24, 320)
-
 [node name="Nivel_1" type="Node2D" unique_id=1436926508]
-
-[node name="Jugador1" parent="." unique_id=499134470 instance=ExtResource("1_mt5rx")]
-position = Vector2(-160, 240)
-scale = Vector2(0.5, 0.5)
-
-[node name="Jugador2" parent="." unique_id=1753851258 instance=ExtResource("1_mt5rx")]
-position = Vector2(120, 245)
-scale = Vector2(0.5, 0.5)
-id_jugador = 2
+script = ExtResource("1_i5a71")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=431170223]
+script = ExtResource("2_i2p14")
 
-[node name="Pack_tablero" parent="." unique_id=1845077339 instance=ExtResource("2_rcdd3")]
-position = Vector2(8, -176)
+[node name="Escena_Juego" parent="Camera2D" unique_id=1566723946 instance=ExtResource("3_i5a71")]
 
-[node name="Fondo" parent="." unique_id=37255365 instance=ExtResource("3_rcdd3")]
-z_index = -2
-position = Vector2(-2348, -859)
-scale = Vector2(3.7908418, 3.7908418)
-
-[node name="Paredes" type="StaticBody2D" parent="." unique_id=1050049127]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Paredes" unique_id=1334608859]
-position = Vector2(-9, 325)
-shape = SubResource("SegmentShape2D_rcdd3")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Paredes" unique_id=1794464728]
-position = Vector2(-43, -329)
-shape = SubResource("SegmentShape2D_i5a71")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Paredes" unique_id=1387937132]
-position = Vector2(-576, -24)
-shape = SubResource("SegmentShape2D_i2p14")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Paredes" unique_id=1366284720]
-position = Vector2(552, 0)
-shape = SubResource("SegmentShape2D_2tsr8")
+[node name="Fondo" parent="." unique_id=1836239138 instance=ExtResource("3_rcdd3")]

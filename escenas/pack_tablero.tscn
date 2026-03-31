@@ -130,16 +130,22 @@ sources/0 = SubResource("TileSetAtlasSource_0ecjf")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_heww1"]
 size = Vector2(10, 9.749999)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nf558"]
-size = Vector2(159.5, 93)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xw4v6"]
+radius = 54.75
+height = 209.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_811ow"]
 size = Vector2(86.5, 3.75)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_acicy"]
+radius = 151.0
+height = 363.0
+
 [node name="tablero" type="AnimatableBody2D" unique_id=910256718 node_paths=PackedStringArray("tilemap")]
 scale = Vector2(4, 4)
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32
+collision_mask = 32
+sync_to_physics = false
 script = ExtResource("1_nf558")
 tilemap = NodePath("casillas")
 
@@ -256,8 +262,11 @@ animation = &"Estandar"
 frame_progress = 0.36805388
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1291070030]
-position = Vector2(-2, 0.25)
-shape = SubResource("RectangleShape2D_nf558")
+light_mask = 32
+visibility_layer = 32
+position = Vector2(0, 1.5)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_xw4v6")
 
 [node name="Muro" type="Area2D" parent="." unique_id=573687341]
 collision_layer = 32768
@@ -267,3 +276,9 @@ collision_mask = 32768
 position = Vector2(-2.25, 32.125)
 shape = SubResource("RectangleShape2D_811ow")
 debug_color = Color(0.70196074, 0, 0.3685291, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=719351574]
+modulate = Color(0.3625, 0.16878906, 0.20147775, 1)
+position = Vector2(0, -93.75)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_acicy")

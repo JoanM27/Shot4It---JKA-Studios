@@ -12,12 +12,12 @@ var sufijo_color: String = ""
 @onready var animar_propulsor = $LlamaPropulsor
 
 # --- Variables de Movimiento --- #
-@export var VELOCIDAD_MAXIMA = 700.0
-@export var ACELERACION = 1500.0
-@export var FRICCION = 1200.0
+@export var VELOCIDAD_MAXIMA = 350.0
+@export var ACELERACION = 750.0
+@export var FRICCION = 600.0
 
 # --- Variables de Rebote --- #
-@export var REBOTE_BASE: float = 300.0 # Un empujoncito mínimo garantizado
+@export var REBOTE_BASE: float = 150.0 # Un empujoncito mínimo garantizado
 @export var MULTIPLICADOR_CHOQUE: float = 0.1 # Qué tanto afecta la velocidad al choque
 
 # --- Variables de Disparo --- #
@@ -128,7 +128,7 @@ func disparar() -> void:
 	animar_disparo.play("disparo" + sufijo_color)
 	var nueva_bala = bala.instantiate()
 	
-	nueva_bala.global_position = global_position + Vector2(0, -40)
+	nueva_bala.global_position = global_position + Vector2(0, -10)
 	nueva_bala.sufijo_color = sufijo_color
 	nueva_bala.id_dueno = id_jugador
 	

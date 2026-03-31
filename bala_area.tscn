@@ -169,7 +169,7 @@ animations = [{
 [node name="bala_area" type="Area2D" unique_id=471613102]
 z_index = 1
 rotation = -1.5707964
-scale = Vector2(2, 2)
+scale = Vector2(0.5, 0.5)
 collision_layer = 65280
 collision_mask = 65280
 script = ExtResource("1_21rw1")
