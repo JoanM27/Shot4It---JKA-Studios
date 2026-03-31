@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://berfe7akj6gsc"]
+
+[ext_resource type="Texture2D" uid="uid://bppenqd81rn8e" path="res://assets/Meteoros.png" id="1_fe6g0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp8ox"]
+atlas = ExtResource("1_fe6g0")
+region = Rect2(34.90029, 2.513052, 10.162712, 11.726202)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gnf0n"]
+radius = 4.0
+height = 8.0
+
+[node name="meteoroPequeno" type="Area2D" unique_id=2018519021]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2124849005]
+texture = SubResource("AtlasTexture_dp8ox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=858169120]
+rotation = 0.43509656
+scale = Vector2(1.1627442, 1.4219798)
+shape = SubResource("CapsuleShape2D_gnf0n")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=757098852]

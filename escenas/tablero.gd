@@ -3,6 +3,7 @@ extends AnimatableBody2D
 signal Win(player)
 signal Stalemate
 
+
 @export var tilemap: TileMapLayer # Arrastra tu nodo TileMapLayer aquí en el inspector
 @onready var animar_propulsor_derecho = $NavaNodriza/PropulsorDerecho
 @onready var animar_propulsor_izquierdo = $NavaNodriza/PropulsorIzquierdo
@@ -15,6 +16,8 @@ var columns = [
 	[0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0],
 	[0,0,0,0,0,0], [0,0,0,0,0,0], [0,0,0,0,0,0]
 ]
+
+
 
 func _ready() -> void:
 	
