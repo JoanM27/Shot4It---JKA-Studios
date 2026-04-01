@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cw3pi2jfm7hs0"]
 
-[ext_resource type="Script" uid="uid://dsf2udmtdq53f" path="res://bala_area.gd" id="1_21rw1"]
+[ext_resource type="Script" uid="uid://dsf2udmtdq53f" path="res://scripts/bala_area.gd" id="1_21rw1"]
 [ext_resource type="Texture2D" uid="uid://bneft4pl68lvj" path="res://assets/proyectil_amarillo.png" id="2_dmcxu"]
 [ext_resource type="Texture2D" uid="uid://dmhs4fxuxeimd" path="res://assets/proyectil_azul.png" id="3_ciewq"]
 

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bop6xo4qlh8u3"]
 
-[ext_resource type="Script" uid="uid://ds2ocdeo480o4" path="res://prueba.gd" id="1_i5a71"]
-[ext_resource type="Script" uid="uid://b64k7443wm08i" path="res://camera_2d.gd" id="2_i2p14"]
-[ext_resource type="PackedScene" uid="uid://bp54p3snnl65s" path="res://escena_juego.tscn" id="3_i5a71"]
+[ext_resource type="Script" uid="uid://ds2ocdeo480o4" path="res://scripts/prueba.gd" id="1_i5a71"]
+[ext_resource type="Script" uid="uid://b64k7443wm08i" path="res://scripts/camera_2d.gd" id="2_i2p14"]
+[ext_resource type="PackedScene" uid="uid://bp54p3snnl65s" path="res://escenas/escena_juego.tscn" id="3_i5a71"]
 [ext_resource type="PackedScene" uid="uid://c8j3ti1r2eany" path="res://escenas/fondo.tscn" id="3_rcdd3"]
 
 [node name="Nivel_1" type="Node2D" unique_id=1436926508]

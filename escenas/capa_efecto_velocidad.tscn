@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://4f4j5qkjvtvg"]
 
-[ext_resource type="Script" uid="uid://diw4wbvnxyief" path="res://escenas/fondo.gd" id="1_b7ka1"]
+[ext_resource type="Script" uid="uid://diw4wbvnxyief" path="res://scripts/fondo.gd" id="1_b7ka1"]
 [ext_resource type="Texture2D" uid="uid://i8yc5rvx8rid" path="res://assets/Efecto_Velocidad.png" id="2_nft4d"]
 
 [node name="CapaEfectoVelocidad" type="ParallaxBackground" unique_id=1445391867]

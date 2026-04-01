@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dlcu3da460c4x"]
 
-[ext_resource type="Script" uid="uid://dn8oqd3jhxf3j" path="res://meteoro_mediano.gd" id="1_4wfrq"]
+[ext_resource type="Script" uid="uid://dn8oqd3jhxf3j" path="res://scripts/meteoro_mediano.gd" id="1_4wfrq"]
 [ext_resource type="Texture2D" uid="uid://bppenqd81rn8e" path="res://assets/Meteoros.png" id="1_kehrt"]
 [ext_resource type="Texture2D" uid="uid://b55uijxt5fqhi" path="res://assets/Polvo.png" id="3_lqudy"]
 
