@@ -9,6 +9,7 @@
 [ext_resource type="SpriteFrames" uid="uid://dx24q8h5xxv58" path="res://assets/Propulsor.tres" id="7_w4uoq"]
 [ext_resource type="Texture2D" uid="uid://csdmteqbff8y7" path="res://assets/corazones.png" id="8_0g7gu"]
 [ext_resource type="Texture2D" uid="uid://b1p7qprb7bt8s" path="res://assets/Explosion.png" id="9_43iks"]
+[ext_resource type="FontFile" uid="uid://dmj1e3btfvqrc" path="res://fuentes/BoldPixels.ttf" id="9_t1uvw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t1uvw"]
 atlas = ExtResource("2_4s6vm")
@@ -205,6 +206,7 @@ animations = [{
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0g7gu"]
+font = ExtResource("9_t1uvw")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_btn3i"]
 atlas = ExtResource("9_43iks")
@@ -315,7 +317,7 @@ scale = Vector2(2.3600001, 2.3600001)
 scale = Vector2(0.99999994, 0.99999994)
 sprite_frames = SubResource("SpriteFrames_btn3i")
 animation = &"corazon_estandar_azul"
-frame_progress = 0.66601884
+frame_progress = 0.5197268
 
 [node name="Corazon2" type="AnimatedSprite2D" parent="Corazones" unique_id=65392720]
 position = Vector2(14.285714, 0)

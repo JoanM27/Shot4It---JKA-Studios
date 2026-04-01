@@ -77,12 +77,10 @@ func _ready():
 	animar_explosion.visible = false
 	animar_explosion.stop()
 	
-	# Configurar Timers por código para no llenar la escena de nodos
-	add_child(timer_recarga)
+	# Configurar Timers 
 	timer_recarga.one_shot = true
 	timer_recarga.timeout.connect(_finalizar_recarga)
 	
-	add_child(timer_invulnerable)
 	timer_invulnerable.one_shot = true
 	timer_invulnerable.timeout.connect(func(): es_invulnerable = false)
 
@@ -237,6 +235,7 @@ func efecto_parpadeo_dano():
 
 func morir():
 	print("Jugador ", id_jugador, " ha muerto.")
+	get_tree().call_group("cerebro", "registrar_muerte", id_jugador)
 	animar_propulsor.visible = false
 	velocity = Vector2.ZERO
 	

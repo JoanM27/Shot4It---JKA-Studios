@@ -194,14 +194,18 @@ func bloquear_fichas(jugador: int, coordenadas: Array) -> void:
 	# 3. Sumar puntos y verificar si ya ganaron la partida
 	if jugador == 1:
 		puntos_jugador1 += 1
+		get_tree().call_group("cerebro", "registrar_conexion", jugador)
 		print("¡Jugador 1 anota! Puntos: ", puntos_jugador1)
 		if puntos_jugador1 >= puntos_para_ganar:
 			win(1)
+			get_tree().call_group("cerebro", "finalizar_partida_por_conexiones")
 	else:
 		puntos_jugador2 += 1
+		get_tree().call_group("cerebro", "registrar_conexion", jugador)
 		print("¡Jugador 2 anota! Puntos: ", puntos_jugador2)
 		if puntos_jugador2 >= puntos_para_ganar:
 			win(2)
+			get_tree().call_group("cerebro", "finalizar_partida_por_conexiones")
 func win(ganador: int) -> void:
 	emit_signal("Win", ganador)
 	print("¡EL JUGADOR ", ganador, " ES EL GANADOR CON UN CONNECT 4!")
