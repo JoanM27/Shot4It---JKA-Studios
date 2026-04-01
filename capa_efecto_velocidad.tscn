@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://4f4j5qkjvtvg"]
+
+[ext_resource type="Script" uid="uid://diw4wbvnxyief" path="res://escenas/fondo.gd" id="1_b7ka1"]
+[ext_resource type="Texture2D" uid="uid://i8yc5rvx8rid" path="res://assets/Efecto_Velocidad.png" id="2_nft4d"]
+
+[node name="CapaEfectoVelocidad" type="ParallaxBackground" unique_id=1445391867]
+layer = 6
+script = ExtResource("1_b7ka1")
+
+[node name="EfectoVelocidad" type="ParallaxLayer" parent="." unique_id=1890125407]
+modulate = Color(0.83, 0.7940333, 0.664, 0.30980393)
+z_index = 5
+texture_repeat = 2
+motion_scale = Vector2(0, 10)
+motion_offset = Vector2(0, 1)
+motion_mirroring = Vector2(0, 334.848)
+
+[node name="Efecto1" type="Sprite2D" parent="EfectoVelocidad" unique_id=33522660]
+z_index = 3
+position = Vector2(224, 0)
+texture = ExtResource("2_nft4d")
+
+[node name="Efecto2" type="Sprite2D" parent="EfectoVelocidad" unique_id=440071084]
+z_index = 3
+position = Vector2(120, 0)
+texture = ExtResource("2_nft4d")
+
+[node name="Efecto3" type="Sprite2D" parent="EfectoVelocidad" unique_id=2102127988]
+z_index = 3
+texture = ExtResource("2_nft4d")
+
+[node name="Efecto4" type="Sprite2D" parent="EfectoVelocidad" unique_id=636571106]
+z_index = 3
+position = Vector2(336, 0)
+texture = ExtResource("2_nft4d")

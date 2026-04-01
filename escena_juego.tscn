@@ -94,14 +94,16 @@ scale = Vector2(0.5, 0.5)
 [node name="Jugador2" parent="Jugadores" unique_id=1753851258 instance=ExtResource("2_4kdet")]
 position = Vector2(560, 10)
 id_jugador = 2
+nombre_jugador = "Piloto2"
 
 [node name="Jugador1" parent="Jugadores" unique_id=103557005 instance=ExtResource("2_4kdet")]
+nombre_jugador = "Piloto1"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=66831604]
 
 [node name="Paredes" type="StaticBody2D" parent="Camera2D" unique_id=1428471715]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 32770
+collision_mask = 32770
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Paredes" unique_id=1458647488]
 position = Vector2(-9, 325)

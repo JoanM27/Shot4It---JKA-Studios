@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://diw4wbvnxyief" path="res://escenas/fondo.gd" id="1_mnt6w"]
 [ext_resource type="Texture2D" uid="uid://db7mu61dvmrgf" path="res://assets/Fondo_oscuro.png" id="1_wgmnp"]
-[ext_resource type="Texture2D" uid="uid://i8yc5rvx8rid" path="res://assets/Efecto_Velocidad.png" id="2_ejs1y"]
 [ext_resource type="Texture2D" uid="uid://j4hqs2xe7ct5" path="res://assets/nebulosas_1.png" id="2_i4ada"]
 [ext_resource type="Texture2D" uid="uid://e7fptanhogvv" path="res://assets/nebulosas_2.png" id="3_mnt6w"]
 [ext_resource type="Texture2D" uid="uid://dxe64d61pce8r" path="res://assets/estrellas_brillantes.png" id="4_ejs1y"]
@@ -15,32 +14,6 @@
 
 [node name="Fondo" type="ParallaxBackground" parent="." unique_id=1836239138]
 script = ExtResource("1_mnt6w")
-
-[node name="EfectoVelocidad" type="ParallaxLayer" parent="Fondo" unique_id=2022088321]
-modulate = Color(0.83125, 0.79536986, 0.66240233, 0.57254905)
-texture_repeat = 2
-motion_scale = Vector2(0, 10)
-motion_offset = Vector2(0, 1)
-motion_mirroring = Vector2(0, 334.848)
-
-[node name="Efecto1" type="Sprite2D" parent="Fondo/EfectoVelocidad" unique_id=1394134012]
-z_index = 3
-position = Vector2(224, 0)
-texture = ExtResource("2_ejs1y")
-
-[node name="Efecto2" type="Sprite2D" parent="Fondo/EfectoVelocidad" unique_id=1384159972]
-z_index = 3
-position = Vector2(120, 0)
-texture = ExtResource("2_ejs1y")
-
-[node name="Efecto3" type="Sprite2D" parent="Fondo/EfectoVelocidad" unique_id=985817595]
-z_index = 3
-texture = ExtResource("2_ejs1y")
-
-[node name="Efecto4" type="Sprite2D" parent="Fondo/EfectoVelocidad" unique_id=229028648]
-z_index = 3
-position = Vector2(336, 0)
-texture = ExtResource("2_ejs1y")
 
 [node name="FondoOscuro" type="ParallaxLayer" parent="Fondo" unique_id=1084633960]
 position = Vector2(256, 0)

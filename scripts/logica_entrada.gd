@@ -9,7 +9,7 @@ signal ficha_completada(id_columna, color_sufijo)
 @export var tilemap: TileMapLayer  # Arrastra el TileMapLayer del padre aquí desde el inspector
 
 # --- ESTADO INTERNO ---
-var nivel_llenado: int = 0
+var nivel_llenado: float = 0
 var color_actual: String = ""
 var procesando: bool = false # Bloquea la entrada si se está animando el disparo
 
@@ -39,10 +39,10 @@ func recibir_proyectil(id_jugador: int, color_sufijo: String) -> void:
 	else:
 		if color_actual == color_sufijo:
 			# Si es del mismo color, aumenta el progreso
-			nivel_llenado += 1
+			nivel_llenado += 0.5
 		else:
 			# SABOTEO: Si es de diferente color, resta progreso
-			nivel_llenado -= 1
+			nivel_llenado -= 0.5
 			print("¡Saboteo! Nivel baja a ", nivel_llenado)
 			if nivel_llenado == 0:
 				color_actual = "" # Vuelve a estado neutro

@@ -3,11 +3,14 @@ extends Area2D
 var velocidad: float = 300.0
 var sufijo_color: String = ""
 var id_dueno: int = 0
+@export var puntos_dano: int = 1
 
 # Tiempo que se queda pegado después del impacto (en segundos)
 var tiempo_pegado: float = 1
 
 @onready var animar: AnimatedSprite2D = $AnimatedSprite2D
+
+
 
 func _ready() -> void:
 	print("Bala (Area2D) lista...")
@@ -26,7 +29,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	procesar_colision(body)
-
+	if body.has_method("recibir_dano"):
+		body.recibir_dano(puntos_dano)
 
 func _on_area_entered(area: Area2D) -> void:
 	procesar_colision(area)
@@ -68,4 +72,7 @@ func pegar_al_collider(collider: Node) -> void:
 	await get_tree().create_timer(tiempo_pegado).timeout
 	
 	# 6. Eliminar el proyectil
+	queue_free()
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	# Si sale de pantalla sin chocar con nada, se elimina
 	queue_free()

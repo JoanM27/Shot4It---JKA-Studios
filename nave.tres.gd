@@ -3,13 +3,26 @@ extends CharacterBody2D
 # --- Bala --- #
 @export var bala: PackedScene
 
+
 # --- Jugador --- #
 @export var id_jugador: int = 1
+@export var nombre_jugador: String = "Piloto" 
 var sufijo_color: String = ""
+var posicion_inicial: Vector2
 
+# --- Animaciones ---<3
 @onready var animar_nave = $AspectoNave
 @onready var animar_disparo = $AspectoDisparo
 @onready var animar_propulsor = $LlamaPropulsor
+@onready var barra_recarga =  $Recarga
+@onready var animar_explosion = $Explosion
+
+# --- Nodos de Interfaz (Corazones) ---
+@onready var corazon1 = $Corazones/Corazon1
+@onready var corazon2 = $Corazones/Corazon2
+@onready var corazon3 = $Corazones/Corazon3
+@onready var lista_corazones = [corazon1, corazon2, corazon3]
+@onready var etiqueta_nombre = $nombre_jugador
 
 # --- Variables de Movimiento --- #
 @export var VELOCIDAD_MAXIMA = 350.0
@@ -26,6 +39,24 @@ var sufijo_color: String = ""
 var tiempo_ultimo_disparo: float = 0.0
 var esta_disparando: bool = false          
 
+# --- Variables de Salud y Daño ---
+@export var salud_maxima: int = 9 # 3 corazones * 3 puntos
+var salud_actual: int
+var es_invulnerable: bool = false
+@export var tiempo_invulnerabilidad: float = 0.5
+@export var tiempo_reaparecer: float = 3.0
+
+# --- Variables de Munición ---
+@export var municion_maxima: int = 20
+@export var tiempo_recarga: float = 1.5
+var municion_actual: int
+var esta_recargando: bool = false
+
+
+# --- Nodos de apoyo (Asegúrate de tener estos nombres en tu escena) ---
+@onready var timer_recarga = $timer_recarga
+@onready var timer_invulnerable = $timer_invulnerable
+
 # --- Nombres de Acciones Dinámicas --- #
 var btn_izq: String
 var btn_der: String
@@ -34,6 +65,28 @@ var btn_aba: String
 var btn_disparar: String
 
 func _ready():
+	# Guardamos la posición exacta del inicio
+	posicion_inicial = global_position
+	#ASIGNAR NOMBRE 
+	etiqueta_nombre.text = nombre_jugador
+	# Inicializar stats
+	salud_actual = salud_maxima
+	municion_actual = municion_maxima
+	
+	# Asegurar que la explosión esté oculta y detenida al inicio
+	animar_explosion.visible = false
+	animar_explosion.stop()
+	
+	# Configurar Timers por código para no llenar la escena de nodos
+	add_child(timer_recarga)
+	timer_recarga.one_shot = true
+	timer_recarga.timeout.connect(_finalizar_recarga)
+	
+	add_child(timer_invulnerable)
+	timer_invulnerable.one_shot = true
+	timer_invulnerable.timeout.connect(func(): es_invulnerable = false)
+
+	# (Tu código anterior de sufijos y botones...)
 	sufijo_color = "_amarillo" if id_jugador == 1 else "_azul"
 	animar_nave.play("estandar" + sufijo_color)
 	animar_propulsor.play("estandar")
@@ -43,6 +96,14 @@ func _ready():
 	btn_arr = "arriba_" + str(id_jugador)
 	btn_aba = "abajo_" + str(id_jugador)
 	btn_disparar = "disparar_" + str(id_jugador)
+	
+	# === CONFIGURAR COLOR DE CORAZONES ===
+	var anim_corazon = "corazon_estandar" + sufijo_color
+	for corazon in lista_corazones:
+		corazon.play(anim_corazon)
+		corazon.pause() # Pausamos para controlar el frame manualmente
+		
+	actualizar_corazones()
 
 
 func _physics_process(delta: float) -> void:
@@ -103,23 +164,116 @@ func _physics_process(delta: float) -> void:
 
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed(btn_disparar):
-		disparar()
+	
+	if salud_actual <= 0: return # No hacer nada si está muerto
+	
+	# --- LÓGICA DE LA BARRA VISUAL ---
+	if esta_recargando:
+		barra_recarga.visible = true
+		# Calculamos cuánto tiempo ha pasado restando el tiempo restante al total
+		barra_recarga.value = tiempo_recarga - timer_recarga.time_left
+	else:
+		barra_recarga.visible = false
+		
+	# --- LÓGICA DE DISPARO CORREGIDA ---
+	if Input.is_action_just_pressed(btn_disparar) and not esta_recargando:
+		intentar_disparar()
 		tiempo_ultimo_disparo = 0.0
 		esta_disparando = true
 	
-	elif Input.is_action_pressed(btn_disparar) and esta_disparando:
+	# Agregamos "and not esta_recargando" para que el autodisparo se detenga al recargar
+	elif Input.is_action_pressed(btn_disparar) and esta_disparando and not esta_recargando:
 		tiempo_ultimo_disparo += delta
 		
 		if tiempo_ultimo_disparo >= cadencia_disparo:
-			disparar()
+			# CAMBIO CLAVE: Llamamos a intentar_disparar(), no a disparar() directamente
+			intentar_disparar() 
 			tiempo_ultimo_disparo = 0.0
 	
 	if Input.is_action_just_released(btn_disparar):
 		esta_disparando = false
 		tiempo_ultimo_disparo = 0.0
 
+# --- SISTEMA DE DISPARO Y RECARGA ---
+func intentar_disparar():
+	if municion_actual > 0:
+		disparar()
+		municion_actual -= 1
+	else:
+		iniciar_recarga()
 
+func iniciar_recarga():
+	if esta_recargando: return
+	esta_recargando = true
+	print("Recargando...")
+	timer_recarga.start(tiempo_recarga)
+
+func _finalizar_recarga():
+	municion_actual = municion_maxima
+	esta_recargando = false
+	print("¡Munición lista!")
+
+# --- SISTEMA DE DAÑO Y MUERTE ---
+func recibir_dano(cantidad: int):
+	if es_invulnerable or salud_actual <= 0: return
+	
+	salud_actual -= cantidad
+	actualizar_corazones()
+	es_invulnerable = true
+	timer_invulnerable.start(tiempo_invulnerabilidad)
+	
+	if salud_actual <= 0:
+		morir()
+	else:
+		efecto_parpadeo_dano()
+
+# Efecto HSV: Saturación (S) de 0 a 100 (Rojizo)
+func efecto_parpadeo_dano():
+	var tween = create_tween()
+	# Parpadea 3 veces: Modula la saturación hacia el rojo
+	for i in range(3):
+		tween.tween_property(animar_nave, "modulate", Color(2, 0.5, 0.5), 0.1) # Rojo brillante
+		tween.tween_property(animar_nave, "modulate", Color(1, 1, 1), 0.1)     # Normal
+
+func morir():
+	print("Jugador ", id_jugador, " ha muerto.")
+	animar_propulsor.visible = false
+	velocity = Vector2.ZERO
+	
+	# Reproducir animación de explosión en la posición de la nave
+	animar_explosion.visible = true
+	# Asegurar que la animación empiece desde el primer frame
+	animar_explosion.frame = 0 
+	animar_explosion.play("explosion")
+	
+	# Efecto HSV: Valor (V) de 100 a 0 (Oscurecer)
+	var tween = create_tween()
+	tween.tween_property(animar_nave, "modulate", Color(0, 0, 0), 1.0)
+	
+	await get_tree().create_timer(tiempo_reaparecer).timeout
+	reaparecer()
+
+func reaparecer():
+	salud_actual = salud_maxima
+	actualizar_corazones()
+	municion_actual = municion_maxima
+	animar_nave.modulate = Color(1, 1, 1)
+	animar_propulsor.visible = true
+	global_position = posicion_inicial # O un spawn point
+	
+	# Asegurar que la explosión esté detenida y oculta al reaparecer
+	animar_explosion.visible = false
+	animar_explosion.stop()
+	
+	# Invulnerabilidad temporal al nacer
+	es_invulnerable = true
+	timer_invulnerable.start(2.0) 
+	
+	# Efecto visual de invulnerabilidad (fantasma)
+	var tween = create_tween().set_loops(5)
+	tween.tween_property(animar_nave, "modulate:a", 0.3, 0.2)
+	tween.tween_property(animar_nave, "modulate:a", 1.0, 0.2)
+	
 func disparar() -> void:
 	if not bala:
 		push_error("La escena de la bala no está asignada!")
@@ -134,5 +288,19 @@ func disparar() -> void:
 	
 	get_tree().root.add_child(nueva_bala)
 
-# ¡ADVERTENCIA: NO VUELVAS A PONER LA FUNCIÓN "recibir_rebote" AQUÍ!
-# Si lo haces, las naves se empujarán mutuamente en un bucle infinito y saldrán volando.
+func actualizar_corazones():
+	# Recorremos los 3 corazones (índices 0, 1 y 2)
+	for i in range(3):
+		# Calculamos la vida matemática de ESTE corazón en específico (de 0 a 3)
+		var vida_este_corazon = clamp(salud_actual - (i * 3), 0, 3)
+		
+		# Asignamos el frame basándonos en tu imagen
+		match vida_este_corazon:
+			3:
+				lista_corazones[i].frame = 0 # Lleno
+			2:
+				lista_corazones[i].frame = 2 # Falta un tercio
+			1:
+				lista_corazones[i].frame = 1 # Queda un tercio
+			0:
+				lista_corazones[i].frame = 3 # Roto / Vacío

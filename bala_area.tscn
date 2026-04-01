@@ -183,3 +183,5 @@ shape = SubResource("RectangleShape2D_jgwpk")
 rotation = 1.5707964
 sprite_frames = SubResource("SpriteFrames_vph68")
 animation = &"estandar_proyectil_azul"
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=99138264]
