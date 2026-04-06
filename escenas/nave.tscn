@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://dsj54j1vn5p68"]
 
 [ext_resource type="Script" uid="uid://333y7c0nv6l" path="res://scripts/nave.tres.gd" id="1_4s6vm"]
-[ext_resource type="Texture2D" uid="uid://bfvltwtmbkopc" path="res://assets/nave_amarilla.png" id="2_4s6vm"]
+[ext_resource type="Texture2D" uid="uid://bfvltwtmbkopc" path="res://assets/naves/nave_amarilla.png" id="2_4s6vm"]
 [ext_resource type="PackedScene" uid="uid://cw3pi2jfm7hs0" path="res://escenas/bala_area.tscn" id="2_iaarx"]
-[ext_resource type="Texture2D" uid="uid://c4ufhrnn0oytg" path="res://assets/nave_azul.png" id="3_w4uoq"]
-[ext_resource type="Texture2D" uid="uid://bneft4pl68lvj" path="res://assets/proyectil_amarillo.png" id="5_4s6vm"]
-[ext_resource type="Texture2D" uid="uid://dmhs4fxuxeimd" path="res://assets/proyectil_azul.png" id="6_w4uoq"]
+[ext_resource type="Texture2D" uid="uid://c4ufhrnn0oytg" path="res://assets/naves/nave_azul.png" id="3_w4uoq"]
+[ext_resource type="Texture2D" uid="uid://bneft4pl68lvj" path="res://assets/efectos/proyectil_amarillo.png" id="5_4s6vm"]
+[ext_resource type="Texture2D" uid="uid://dmhs4fxuxeimd" path="res://assets/efectos/proyectil_azul.png" id="6_w4uoq"]
 [ext_resource type="SpriteFrames" uid="uid://dx24q8h5xxv58" path="res://assets/Propulsor.tres" id="7_w4uoq"]
-[ext_resource type="Texture2D" uid="uid://csdmteqbff8y7" path="res://assets/corazones.png" id="8_0g7gu"]
-[ext_resource type="Texture2D" uid="uid://b1p7qprb7bt8s" path="res://assets/Explosion.png" id="9_43iks"]
+[ext_resource type="Texture2D" uid="uid://csdmteqbff8y7" path="res://assets/ui/corazones.png" id="8_0g7gu"]
+[ext_resource type="Texture2D" uid="uid://b1p7qprb7bt8s" path="res://assets/efectos/Explosion.png" id="9_43iks"]
 [ext_resource type="FontFile" uid="uid://dmj1e3btfvqrc" path="res://fuentes/BoldPixels.ttf" id="9_t1uvw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t1uvw"]
@@ -270,6 +270,11 @@ collision_layer = 32802
 collision_mask = 34
 script = ExtResource("1_4s6vm")
 bala = ExtResource("2_iaarx")
+VELOCIDAD_MAXIMA = 200.0
+ACELERACION = 210.0
+REBOTE_BASE = 40.0
+MULTIPLICADOR_CHOQUE = 0.3
+tiempo_invulnerabilidad = 0.4
 
 [node name="AspectoNave" type="AnimatedSprite2D" parent="." unique_id=1993617354]
 position = Vector2(-1, 0)

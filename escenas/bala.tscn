@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://j16h4wrky40u"]
 
 [ext_resource type="Script" uid="uid://ct1um20j6suaa" path="res://escenas/bala.gd" id="1_2qn40"]
-[ext_resource type="Texture2D" uid="uid://bneft4pl68lvj" path="res://assets/proyectil_amarillo.png" id="2_vsvbv"]
-[ext_resource type="Texture2D" uid="uid://dmhs4fxuxeimd" path="res://assets/proyectil_azul.png" id="3_qa18i"]
+[ext_resource type="Texture2D" uid="uid://bneft4pl68lvj" path="res://assets/efectos/proyectil_amarillo.png" id="2_vsvbv"]
+[ext_resource type="Texture2D" uid="uid://dmhs4fxuxeimd" path="res://assets/efectos/proyectil_azul.png" id="3_qa18i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2qn40"]
 

@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://v5cqinhh25fl"]
 
-[ext_resource type="Texture2D" uid="uid://fgvjesb80vdg" path="res://assets/cajas.png" id="1_y2457"]
+[ext_resource type="Texture2D" uid="uid://fgvjesb80vdg" path="res://assets/naves/cajas.png" id="1_y2457"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ecjf"]
 resource_name = "fichas"

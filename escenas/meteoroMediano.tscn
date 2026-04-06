@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://dlcu3da460c4x"]
+
+[ext_resource type="Script" uid="uid://dn8oqd3jhxf3j" path="res://scripts/meteoro_mediano.gd" id="1_4wfrq"]
+[ext_resource type="Texture2D" uid="uid://bppenqd81rn8e" path="res://assets/meteoros/Meteoros.png" id="1_kehrt"]
+[ext_resource type="Texture2D" uid="uid://b55uijxt5fqhi" path="res://assets/efectos/Polvo.png" id="3_lqudy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltx0b"]
+atlas = ExtResource("1_kehrt")
+region = Rect2(6.214981, 4.51836, 21.713806, 22.392357)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d0d77"]
+radius = 12.486024
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yab4x"]
+atlas = ExtResource("3_lqudy")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfqku"]
+atlas = ExtResource("3_lqudy")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1k8h2"]
+atlas = ExtResource("3_lqudy")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0buj"]
+atlas = ExtResource("3_lqudy")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7lnc"]
+atlas = ExtResource("3_lqudy")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wooj7"]
+atlas = ExtResource("3_lqudy")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2o3x7"]
+atlas = ExtResource("3_lqudy")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0xrk"]
+atlas = ExtResource("3_lqudy")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1w27"]
+atlas = ExtResource("3_lqudy")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eu6wl"]
+atlas = ExtResource("3_lqudy")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ib3qx"]
+atlas = ExtResource("3_lqudy")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nms4r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yab4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfqku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1k8h2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0buj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7lnc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wooj7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2o3x7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0xrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1w27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eu6wl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib3qx")
+}],
+"loop": false,
+"name": &"destruccion",
+"speed": 14.0
+}]
+
+[node name="MeteoroMediano" type="Area2D" unique_id=2222144]
+collision_layer = 32769
+collision_mask = 32769
+script = ExtResource("1_4wfrq")
+min_velocidad = 70.0
+max_velocidad = 110.0
+puntos_dano = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1843919941]
+texture = SubResource("AtlasTexture_ltx0b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1292113949]
+rotation = 0.5417518
+scale = Vector2(0.64104474, 0.6922673)
+shape = SubResource("CapsuleShape2D_d0d77")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2090442668]
+
+[node name="Destruccion" type="AnimatedSprite2D" parent="." unique_id=959629725]
+modulate = Color(0.8745098, 0.5294118, 0.1764706, 1)
+sprite_frames = SubResource("SpriteFrames_nms4r")
+animation = &"destruccion"
+frame = 10
+frame_progress = 1.0

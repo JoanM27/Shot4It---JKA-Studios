@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://c8j3ti1r2eany"]
 
 [ext_resource type="Script" uid="uid://diw4wbvnxyief" path="res://scripts/fondo.gd" id="1_mnt6w"]
-[ext_resource type="Texture2D" uid="uid://db7mu61dvmrgf" path="res://assets/Fondo_oscuro.png" id="1_wgmnp"]
-[ext_resource type="Texture2D" uid="uid://j4hqs2xe7ct5" path="res://assets/nebulosas_1.png" id="2_i4ada"]
-[ext_resource type="Texture2D" uid="uid://e7fptanhogvv" path="res://assets/nebulosas_2.png" id="3_mnt6w"]
-[ext_resource type="Texture2D" uid="uid://dxe64d61pce8r" path="res://assets/estrellas_brillantes.png" id="4_ejs1y"]
-[ext_resource type="Texture2D" uid="uid://qunyei7cqm2n" path="res://assets/estrellas_medianas.png" id="5_hgrue"]
-[ext_resource type="Texture2D" uid="uid://254p3u1xtslc" path="res://assets/estrellas_oscuras.png" id="6_bfekk"]
-[ext_resource type="Texture2D" uid="uid://bwxhqpvgfxe55" path="res://assets/Planetas_lejanos.png" id="7_b1mu5"]
-[ext_resource type="Texture2D" uid="uid://dvl6xtuh8ecpi" path="res://assets/planetas_cercanos.png" id="8_vimh7"]
+[ext_resource type="Texture2D" uid="uid://db7mu61dvmrgf" path="res://assets/fondos/Fondo_oscuro.png" id="1_wgmnp"]
+[ext_resource type="Texture2D" uid="uid://j4hqs2xe7ct5" path="res://assets/fondos/nebulosas_1.png" id="2_i4ada"]
+[ext_resource type="Texture2D" uid="uid://e7fptanhogvv" path="res://assets/fondos/nebulosas_2.png" id="3_mnt6w"]
+[ext_resource type="Texture2D" uid="uid://dxe64d61pce8r" path="res://assets/fondos/estrellas_brillantes.png" id="4_ejs1y"]
+[ext_resource type="Texture2D" uid="uid://qunyei7cqm2n" path="res://assets/fondos/estrellas_medianas.png" id="5_hgrue"]
+[ext_resource type="Texture2D" uid="uid://254p3u1xtslc" path="res://assets/fondos/estrellas_oscuras.png" id="6_bfekk"]
+[ext_resource type="Texture2D" uid="uid://bwxhqpvgfxe55" path="res://assets/fondos/Planetas_lejanos.png" id="7_b1mu5"]
+[ext_resource type="Texture2D" uid="uid://dvl6xtuh8ecpi" path="res://assets/fondos/planetas_cercanos.png" id="8_vimh7"]
 
 [node name="Fondo" type="Node2D" unique_id=1350129918]
 
