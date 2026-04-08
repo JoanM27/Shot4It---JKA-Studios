@@ -57,12 +57,8 @@ var esta_recargando: bool = false
 @onready var timer_recarga = $timer_recarga
 @onready var timer_invulnerable = $timer_invulnerable
 
-# --- Nombres de Acciones Dinámicas --- #
-var btn_izq: String
-var btn_der: String
-var btn_arr: String
-var btn_aba: String
-var btn_disparar: String
+
+
 
 func _ready():
 	# Guardamos la posición exacta del inicio
@@ -89,11 +85,6 @@ func _ready():
 	animar_nave.play("estandar" + sufijo_color)
 	animar_propulsor.play("estandar")
 	
-	btn_izq = "izquierda_" + str(id_jugador)
-	btn_der = "derecha_" + str(id_jugador)
-	btn_arr = "arriba_" + str(id_jugador)
-	btn_aba = "abajo_" + str(id_jugador)
-	btn_disparar = "disparar_" + str(id_jugador)
 	
 	# === CONFIGURAR COLOR DE CORAZONES ===
 	var anim_corazon = "corazon_estandar" + sufijo_color
@@ -105,7 +96,11 @@ func _ready():
 
 
 func _physics_process(delta: float) -> void:
-	var direccion = Input.get_vector(btn_izq, btn_der, btn_arr, btn_aba)
+	
+	# --- SI ESTÁ MUERTO, CORTAMOS LA FÍSICA AQUÍ MISMO ---
+	if salud_actual <= 0: return 
+	
+	var direccion = Controles.obtener_direccion(id_jugador)
 	
 	if direccion != Vector2.ZERO:
 		velocity = velocity.move_toward(direccion * VELOCIDAD_MAXIMA, ACELERACION * delta)
@@ -174,21 +169,19 @@ func _process(delta: float) -> void:
 		barra_recarga.visible = false
 		
 	# --- LÓGICA DE DISPARO CORREGIDA ---
-	if Input.is_action_just_pressed(btn_disparar) and not esta_recargando:
+	if Controles.presiono_disparo(id_jugador) and not esta_recargando:
 		intentar_disparar()
 		tiempo_ultimo_disparo = 0.0
 		esta_disparando = true
 	
-	# Agregamos "and not esta_recargando" para que el autodisparo se detenga al recargar
-	elif Input.is_action_pressed(btn_disparar) and esta_disparando and not esta_recargando:
+	elif Controles.mantiene_disparo(id_jugador) and esta_disparando and not esta_recargando:
 		tiempo_ultimo_disparo += delta
 		
 		if tiempo_ultimo_disparo >= cadencia_disparo:
-			# CAMBIO CLAVE: Llamamos a intentar_disparar(), no a disparar() directamente
 			intentar_disparar() 
 			tiempo_ultimo_disparo = 0.0
 	
-	if Input.is_action_just_released(btn_disparar):
+	if Controles.solto_disparo(id_jugador):
 		esta_disparando = false
 		tiempo_ultimo_disparo = 0.0
 
@@ -239,6 +232,9 @@ func morir():
 	animar_propulsor.visible = false
 	velocity = Vector2.ZERO
 	
+	# Apagamos la hitbox para que sea un fantasma (Cambia el nombre si tu nodo se llama distinto)
+	$CollisionShape2D.set_deferred("disabled", true)
+	
 	# Reproducir animación de explosión en la posición de la nave
 	animar_explosion.visible = true
 	# Asegurar que la animación empiece desde el primer frame
@@ -258,7 +254,10 @@ func reaparecer():
 	municion_actual = municion_maxima
 	animar_nave.modulate = Color(1, 1, 1)
 	animar_propulsor.visible = true
-	global_position = posicion_inicial # O un spawn point
+	global_position = posicion_inicial
+	
+	# Prendemos la hitbox de nuevo
+	$CollisionShape2D.set_deferred("disabled", false)
 	
 	# Asegurar que la explosión esté detenida y oculta al reaparecer
 	animar_explosion.visible = false
