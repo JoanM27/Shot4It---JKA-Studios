@@ -64,12 +64,12 @@ func _ready():
 	
 	if id_jugador == 1:
 		etiqueta_nombre.text = Global.nombre_j1
-	else:
+		print("jugador ",id_jugador," tiene el nombre de ", Global.nombre_j1)
+	elif id_jugador == 2:
 		etiqueta_nombre.text = Global.nombre_j2
+		print("jugador ",id_jugador," tiene el nombre de ", Global.nombre_j2)
 	# Guardamos la posición exacta del inicio
 	posicion_inicial = global_position
-	#ASIGNAR NOMBRE 
-	etiqueta_nombre.text = nombre_jugador
 	# Inicializar stats
 	salud_actual = salud_maxima
 	municion_actual = municion_maxima
