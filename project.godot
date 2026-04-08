@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Shot4it"
-run/main_scene="uid://baphgkiyguysu"
+run/main_scene="uid://dvukwm1opmtc"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Controles="*uid://b25i5kgnll61t"
+Global="*uid://d8egcbod8nok"
 
 [display]
 

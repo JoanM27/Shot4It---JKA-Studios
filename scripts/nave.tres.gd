@@ -61,6 +61,11 @@ var esta_recargando: bool = false
 
 
 func _ready():
+	
+	if id_jugador == 1:
+		etiqueta_nombre.text = Global.nombre_j1
+	else:
+		etiqueta_nombre.text = Global.nombre_j2
 	# Guardamos la posición exacta del inicio
 	posicion_inicial = global_position
 	#ASIGNAR NOMBRE 

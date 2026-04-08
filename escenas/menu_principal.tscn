@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://dvukwm1opmtc"]
+
+[ext_resource type="Script" uid="uid://b287g822maowi" path="res://escenas/menu_principal.gd" id="1_qf1q6"]
+[ext_resource type="Texture2D" uid="uid://begqw3d3tx6nw" path="res://scripts/Fondo_Principal.png" id="2_p8sbp"]
+[ext_resource type="FontFile" uid="uid://dmj1e3btfvqrc" path="res://fuentes/BoldPixels.ttf" id="3_olkao"]
+[ext_resource type="Texture2D" uid="uid://bfvltwtmbkopc" path="res://assets/naves/nave_amarilla.png" id="4_olkao"]
+[ext_resource type="Texture2D" uid="uid://c4ufhrnn0oytg" path="res://assets/naves/nave_azul.png" id="5_bddn2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bddn2"]
+font = ExtResource("3_olkao")
+font_size = 40
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x5yya"]
+font = ExtResource("3_olkao")
+font_size = 70
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v8ef6"]
+font = ExtResource("3_olkao")
+font_size = 40
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5yya"]
+atlas = ExtResource("4_olkao")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1vsh3"]
+font = ExtResource("3_olkao")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MenuPrincipal" type="Control" unique_id=1061032509]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_right = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0366632, 1.0366632)
+script = ExtResource("1_qf1q6")
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=809587165]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -88.0
+offset_right = 564.0
+offset_bottom = 492.0
+scale = Vector2(0.58979774, 0.58979774)
+texture = ExtResource("2_p8sbp")
+
+[node name="TituloP1" type="Label" parent="." unique_id=515551539]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 32.0
+offset_right = 147.0
+offset_bottom = 68.0
+text = "Shot"
+label_settings = SubResource("LabelSettings_bddn2")
+
+[node name="TituloP2" type="Label" parent="." unique_id=2001973005]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 24.0
+offset_right = 192.0
+offset_bottom = 87.0
+text = "4"
+label_settings = SubResource("LabelSettings_x5yya")
+
+[node name="TituloP3" type="Label" parent="." unique_id=335131393]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 48.0
+offset_right = 237.0
+offset_bottom = 84.0
+text = "it!"
+label_settings = SubResource("LabelSettings_v8ef6")
+
+[node name="PantallaInicio" type="VBoxContainer" parent="." unique_id=1990618264]
+layout_mode = 0
+offset_left = 128.29625
+offset_top = 92.60481
+offset_right = 181.29625
+offset_bottom = 140.60481
+
+[node name="BtnJugar" type="Button" parent="PantallaInicio" unique_id=1569364790]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_olkao")
+text = "JUGAR"
+
+[node name="BtnSalir" type="Button" parent="PantallaInicio" unique_id=1034749157]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_olkao")
+text = "SALIR"
+
+[node name="PantallaSelección" type="HBoxContainer" parent="." unique_id=1930184101]
+visible = false
+layout_mode = 0
+offset_left = 24.115835
+offset_top = 77.170685
+offset_right = 279.11584
+offset_bottom = 167.17068
+
+[node name="LadoJ1" type="VBoxContainer" parent="PantallaSelección" unique_id=1161141212]
+layout_mode = 2
+
+[node name="SkinJ1" type="TextureRect" parent="PantallaSelección/LadoJ1" unique_id=446919223]
+layout_mode = 2
+texture = SubResource("AtlasTexture_x5yya")
+
+[node name="InputNombreJ1" type="LineEdit" parent="PantallaSelección/LadoJ1" unique_id=672230884]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_olkao")
+placeholder_text = "Piloto1"
+
+[node name="CentroModos" type="VBoxContainer" parent="PantallaSelección" unique_id=271447364]
+layout_mode = 2
+
+[node name="TituloModo" type="Label" parent="PantallaSelección/CentroModos" unique_id=1568582228]
+layout_mode = 2
+text = "Elige el Modo"
+label_settings = SubResource("LabelSettings_1vsh3")
+horizontal_alignment = 1
+
+[node name="BtnNormal" type="Button" parent="PantallaSelección/CentroModos" unique_id=386420968]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_olkao")
+theme_override_font_sizes/font_size = 13
+text = "Controles Divididos"
+
+[node name="BtnHibrido" type="Button" parent="PantallaSelección/CentroModos" unique_id=1944065026]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_olkao")
+theme_override_font_sizes/font_size = 13
+text = "Teclado vs Mando"
+
+[node name="BtnVolver" type="Button" parent="PantallaSelección/CentroModos" unique_id=66092635]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_olkao")
+theme_override_font_sizes/font_size = 13
+text = "Volver atrás"
+
+[node name="LadoJ2" type="VBoxContainer" parent="PantallaSelección" unique_id=1253840094]
+layout_mode = 2
+
+[node name="SkinJ2" type="TextureRect" parent="PantallaSelección/LadoJ2" unique_id=1437849628]
+layout_mode = 2
+texture = ExtResource("5_bddn2")
+
+[node name="InputNombreJ2" type="LineEdit" parent="PantallaSelección/LadoJ2" unique_id=2042982384]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_olkao")
+placeholder_text = "Piloto2"
+
+[connection signal="pressed" from="PantallaInicio/BtnJugar" to="." method="_on_btn_jugar_pressed"]
+[connection signal="pressed" from="PantallaInicio/BtnSalir" to="." method="_on_btn_salir_pressed"]
+[connection signal="pressed" from="PantallaSelección/CentroModos/BtnNormal" to="." method="_on_btn_normal_pressed"]
+[connection signal="pressed" from="PantallaSelección/CentroModos/BtnHibrido" to="." method="_on_btn_hibrido_pressed"]
+[connection signal="pressed" from="PantallaSelección/CentroModos/BtnVolver" to="." method="_on_btn_volver_pressed"]
