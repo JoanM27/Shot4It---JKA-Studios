@@ -78,9 +78,9 @@ func calcular_ganador() -> void:
 		
 		# Quién ganó
 		if pts_j1 > pts_j2: 
-			mensaje_ganador = "¡VICTORIA DEL JUGADOR 1!"
+			mensaje_ganador = "¡VICTORIA DE "+Global.nombre_j1.capitalize()
 		elif pts_j2 > pts_j1: 
-			mensaje_ganador = "¡VICTORIA DEL JUGADOR 2!"
+			mensaje_ganador = "¡VICTORIA DE "+Global.nombre_j2.capitalize()
 		else: 
 			mensaje_ganador = "¡EMPATE ÉPICO!"
 			

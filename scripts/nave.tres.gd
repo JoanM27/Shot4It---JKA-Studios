@@ -259,9 +259,17 @@ func reaparecer():
 	municion_actual = municion_maxima
 	animar_nave.modulate = Color(1, 1, 1)
 	animar_propulsor.visible = true
+	
+	# 1. Matamos cualquier inercia fantasma que haya quedado
+	velocity = Vector2.ZERO
+	
+	# 2. Movemos la nave a su base
 	global_position = posicion_inicial
 	
-	# Prendemos la hitbox de nuevo
+	# 3. EL TRUCO ANTI-BUGS: Esperamos un frame físico para que el motor actualice las coordenadas reales
+	await get_tree().physics_frame
+	
+	# 4. Ahora sí, encendemos el cuerpo físico de forma segura
 	$CollisionShape2D.set_deferred("disabled", false)
 	
 	# Asegurar que la explosión esté detenida y oculta al reaparecer
@@ -276,7 +284,6 @@ func reaparecer():
 	var tween = create_tween().set_loops(5)
 	tween.tween_property(animar_nave, "modulate:a", 0.3, 0.2)
 	tween.tween_property(animar_nave, "modulate:a", 1.0, 0.2)
-	
 func disparar() -> void:
 	if not bala:
 		push_error("La escena de la bala no está asignada!")

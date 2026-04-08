@@ -272,9 +272,11 @@ script = ExtResource("1_4s6vm")
 bala = ExtResource("2_iaarx")
 VELOCIDAD_MAXIMA = 200.0
 ACELERACION = 210.0
-REBOTE_BASE = 40.0
-MULTIPLICADOR_CHOQUE = 0.3
+FRICCION = 500.0
+REBOTE_BASE = 50.0
+MULTIPLICADOR_CHOQUE = 0.35
 tiempo_invulnerabilidad = 0.4
+municion_maxima = 30
 
 [node name="AspectoNave" type="AnimatedSprite2D" parent="." unique_id=1993617354]
 position = Vector2(-1, 0)

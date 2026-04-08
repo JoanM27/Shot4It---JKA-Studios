@@ -6,8 +6,8 @@ var pintura_jugador2: float = 0.0
 
 func recibir_proyectil(id_jugador, color):
 	if id_jugador == 1:
-		pintura_jugador1 += 5.0 # Cantidad de pintura por mota
+		pintura_jugador1 += 6.0 # Cantidad de pintura por mota
 		print("Cubeta J1: ", pintura_jugador1)
 	else:
-		pintura_jugador2 += 5.0
+		pintura_jugador2 += 6.0
 		print("Cubeta J2: ", pintura_jugador2)
