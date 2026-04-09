@@ -54,6 +54,7 @@ func _ready() -> void:
 func _on_ficha_completada(id_columna: int, color_sufijo: String) -> void:
 	# Traducimos el color a ID de jugador
 	var jugador = 1 if color_sufijo == "_amarillo" else 2
+	Audio.reproducir("formar_ficha")
 	
 	# Animamos y aplicamos la ficha (es una corrutina porque usa await)
 	procesar_subida_ficha(id_columna, jugador, color_sufijo)

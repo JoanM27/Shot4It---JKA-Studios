@@ -42,8 +42,10 @@ func procesar_colision(collider: Node) -> void:
 	
 	print("¡Impacto con: ", collider.name)
 	
+	
 	# Aplicar el efecto (llenar cubeta, daño, etc.)
 	if collider.has_method("recibir_proyectil"):
+		Audio.reproducir("marcar")
 		collider.recibir_proyectil(id_dueno, sufijo_color)
 	
 	# === PEGARSE AL COLLIDER ===

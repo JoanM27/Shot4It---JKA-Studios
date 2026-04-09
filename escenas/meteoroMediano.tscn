@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://dlcu3da460c4x"]
 
 [ext_resource type="Script" uid="uid://dn8oqd3jhxf3j" path="res://scripts/meteoro_mediano.gd" id="1_4wfrq"]
-[ext_resource type="Texture2D" uid="uid://bppenqd81rn8e" path="res://assets/meteoros/Meteoros.png" id="1_kehrt"]
+[ext_resource type="Texture2D" uid="uid://dtwrrmimbbhs7" path="res://assets/meteoros/Meteoros.png" id="1_kehrt"]
 [ext_resource type="Texture2D" uid="uid://b55uijxt5fqhi" path="res://assets/efectos/Polvo.png" id="3_lqudy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ltx0b"]
 atlas = ExtResource("1_kehrt")
-region = Rect2(6.214981, 4.51836, 21.713806, 22.392357)
+region = Rect2(38.754776, 36.84029, 19.847778, 21.58881)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d0d77"]
 radius = 12.486024

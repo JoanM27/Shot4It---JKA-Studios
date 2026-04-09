@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dc3mkydd6f4m" path="res://scripts/entrada_6.gd" id="9_djxd8"]
 [ext_resource type="Script" uid="uid://b8gl12ox0itgg" path="res://scripts/entrada_7.gd" id="10_djxd8"]
 [ext_resource type="SpriteFrames" uid="uid://c3hluria3tsu2" path="res://assets/propulsorGrande.tres" id="12_xw4v6"]
+[ext_resource type="AudioStream" uid="uid://bvc7ejnhbs4a2" path="res://assets/sonidos/Turbina.mp3" id="13_acicy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ecjf"]
 resource_name = "fichas"
@@ -284,3 +285,12 @@ modulate = Color(0.3625, 0.16878906, 0.20147775, 1)
 position = Vector2(0, -93.75)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_acicy")
+
+[node name="SonidoPropulsor" type="AudioStreamPlayer2D" parent="." unique_id=581564159]
+stream = ExtResource("13_acicy")
+volume_db = -9.313
+pitch_scale = 0.95
+autoplay = true
+bus = &"Efectos"
+playback_type = 1
+parameters/looping = true

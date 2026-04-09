@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://csdmteqbff8y7" path="res://assets/ui/corazones.png" id="8_0g7gu"]
 [ext_resource type="Texture2D" uid="uid://b1p7qprb7bt8s" path="res://assets/efectos/Explosion.png" id="9_43iks"]
 [ext_resource type="FontFile" uid="uid://dmj1e3btfvqrc" path="res://fuentes/BoldPixels.ttf" id="9_t1uvw"]
+[ext_resource type="AudioStream" uid="uid://bvc7ejnhbs4a2" path="res://assets/sonidos/Turbina.mp3" id="11_pf1us"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t1uvw"]
 atlas = ExtResource("2_4s6vm")
@@ -276,7 +277,7 @@ FRICCION = 500.0
 REBOTE_BASE = 50.0
 MULTIPLICADOR_CHOQUE = 0.35
 tiempo_invulnerabilidad = 0.4
-municion_maxima = 30
+municion_maxima = 25
 
 [node name="AspectoNave" type="AnimatedSprite2D" parent="." unique_id=1993617354]
 position = Vector2(-1, 0)
@@ -313,7 +314,7 @@ offset_top = -106.0
 offset_right = -72.0
 offset_bottom = -79.0
 scale = Vector2(2.9524539, 2.9524539)
-max_value = 1.5
+max_value = 1.0
 
 [node name="Corazones" type="Node2D" parent="." unique_id=232428749]
 z_index = 3
@@ -356,3 +357,10 @@ sprite_frames = SubResource("SpriteFrames_mogcg")
 animation = &"explosion"
 frame = 6
 frame_progress = 1.0
+
+[node name="SonidoPropulsor" type="AudioStreamPlayer2D" parent="." unique_id=1456662768]
+stream = ExtResource("11_pf1us")
+volume_db = -22.12
+autoplay = true
+attenuation = 2.1435473
+bus = &"Efectos"

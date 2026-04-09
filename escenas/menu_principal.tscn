@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dmj1e3btfvqrc" path="res://fuentes/BoldPixels.ttf" id="3_olkao"]
 [ext_resource type="Texture2D" uid="uid://bfvltwtmbkopc" path="res://assets/naves/nave_amarilla.png" id="4_olkao"]
 [ext_resource type="Texture2D" uid="uid://c4ufhrnn0oytg" path="res://assets/naves/nave_azul.png" id="5_bddn2"]
+[ext_resource type="AudioStream" uid="uid://bsycnn8jlceci" path="res://assets/sonidos/menu_juego.wav" id="6_bddn2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bddn2"]
 font = ExtResource("3_olkao")
@@ -155,6 +156,12 @@ texture = ExtResource("5_bddn2")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_olkao")
 placeholder_text = "Piloto2"
+
+[node name="Sonido_menu" type="AudioStreamPlayer2D" parent="." unique_id=1739420095]
+stream = ExtResource("6_bddn2")
+volume_db = -5.821
+autoplay = true
+bus = &"Musica"
 
 [connection signal="pressed" from="PantallaInicio/BtnJugar" to="." method="_on_btn_jugar_pressed"]
 [connection signal="pressed" from="PantallaInicio/BtnSalir" to="." method="_on_btn_salir_pressed"]

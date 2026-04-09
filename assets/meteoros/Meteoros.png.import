@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bppenqd81rn8e"
-path="res://.godot/imported/Meteoros.png-219ebd8359cf1dd7952781d6292e7f66.ctex"
+uid="uid://dtwrrmimbbhs7"
+path="res://.godot/imported/meteoros.png-b20908ac09056fa7c0b4c8caef5fa37f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/meteoros/Meteoros.png"
-dest_files=["res://.godot/imported/Meteoros.png-219ebd8359cf1dd7952781d6292e7f66.ctex"]
+source_file="res://assets/meteoros/meteoros.png"
+dest_files=["res://.godot/imported/meteoros.png-b20908ac09056fa7c0b4c8caef5fa37f.ctex"]
 
 [params]
 

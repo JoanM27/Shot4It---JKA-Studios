@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://bwlx176nhjcy3" path="res://scripts/escena_juego.gd" id="1_4kdet"]
 [ext_resource type="PackedScene" uid="uid://dsj54j1vn5p68" path="res://escenas/nave.tscn" id="2_4kdet"]
 [ext_resource type="FontFile" uid="uid://dmj1e3btfvqrc" path="res://fuentes/BoldPixels.ttf" id="2_negk1"]
+[ext_resource type="Script" uid="uid://cy5pscl7mamrf" path="res://escenas/menu_pausa.gd" id="3_sndxu"]
+[ext_resource type="AudioStream" uid="uid://cif1m5bx58vl3" path="res://assets/sonidos/musica_juego.ogg" id="6_g4g1k"]
+[ext_resource type="AudioStream" uid="uid://baspnubw4rtnq" path="res://assets/sonidos/Radio.mp3" id="7_x8shv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4kdet"]
 font = ExtResource("2_negk1")
@@ -27,6 +30,20 @@ font_size = 20
 [sub_resource type="LabelSettings" id="LabelSettings_sndxu"]
 font = ExtResource("2_negk1")
 font_size = 14
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4g1k"]
+font = ExtResource("2_negk1")
+font_size = 8
+font_color = Color(0.91637754, 0.975, 0.10054685, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x8shv"]
+font = ExtResource("2_negk1")
+font_size = 8
+font_color = Color(0.069404274, 0.94882065, 0.965625, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_4c8py"]
 length = 0.001
@@ -158,6 +175,7 @@ label_settings = SubResource("LabelSettings_dti2p")
 
 [node name="PantallaVictoria" type="Control" parent="UI" unique_id=614524342]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -180,6 +198,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 0.5921569)
 
 [node name="TextoGanador" type="Label" parent="UI/PantallaVictoria" unique_id=1298618673]
@@ -233,6 +252,119 @@ scale = Vector2(0.5708903, 0.5708903)
 theme_override_fonts/font = ExtResource("2_negk1")
 text = "Salir al Menú Principal"
 
+[node name="Eventos" type="Control" parent="UI" unique_id=932361262]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="TextoEvento1" type="Label" parent="UI/Eventos" unique_id=951183408]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -296.0
+offset_top = -132.0
+offset_right = -237.0
+offset_bottom = -114.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(43, 13)
+text = "Got it!"
+label_settings = SubResource("LabelSettings_g4g1k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextoEvento2" type="Label" parent="UI/Eventos" unique_id=1884834820]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -130.0
+offset_right = -65.0
+offset_bottom = -112.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Got it!"
+label_settings = SubResource("LabelSettings_x8shv")
+horizontal_alignment = 1
+
+[node name="MenuPausa" type="Control" parent="UI" unique_id=61151969]
+process_mode = 3
+visible = false
+z_index = 300
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_sndxu")
+
+[node name="ColorRect" type="ColorRect" parent="UI/MenuPausa" unique_id=190147195]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -128.0
+offset_right = -176.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(8.985953, 6.3881736)
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5921569)
+
+[node name="Label" type="Label" parent="UI/MenuPausa" unique_id=300806665]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.0
+offset_top = -32.0
+offset_right = 71.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(101.42592, 11.702991)
+text = "JUEGO PAUSADO"
+label_settings = SubResource("LabelSettings_d05fw")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MenuPausa" unique_id=1228928607]
+layout_mode = 1
+offset_left = -48.0
+offset_top = 10.0
+offset_right = 52.0
+offset_bottom = 58.0
+alignment = 1
+
+[node name="BtnContinuar" type="Button" parent="UI/MenuPausa/VBoxContainer" unique_id=77777948]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_fonts/font = ExtResource("2_negk1")
+text = "Continuar"
+
+[node name="BtnSalirMenu" type="Button" parent="UI/MenuPausa/VBoxContainer" unique_id=847513271]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_negk1")
+text = "Salir"
+
 [node name="Pack_tablero" parent="." unique_id=910256718 instance=ExtResource("1_4c8py")]
 position = Vector2(8, -176)
 
@@ -277,5 +409,20 @@ position = Vector2(-160, 240)
 scale = Vector2(0.5, 0.5)
 nombre_jugador = "Piloto1"
 
+[node name="MusicaEscena" type="AudioStreamPlayer2D" parent="." unique_id=1050711217]
+stream = ExtResource("6_g4g1k")
+volume_db = -0.002
+autoplay = true
+attenuation = 2.8284266
+bus = &"Musica"
+
+[node name="Cabina" type="AudioStreamPlayer2D" parent="." unique_id=1791288959]
+stream = ExtResource("7_x8shv")
+volume_db = -16.298
+autoplay = true
+bus = &"Musica"
+
 [connection signal="pressed" from="UI/PantallaVictoria/BtnReiniciar" to="." method="_on_btn_reiniciar_pressed"]
 [connection signal="pressed" from="UI/PantallaVictoria/BtnMenu" to="." method="_on_btn_menu_pressed"]
+[connection signal="pressed" from="UI/MenuPausa/VBoxContainer/BtnContinuar" to="UI/MenuPausa" method="_on_btn_continuar_pressed"]
+[connection signal="pressed" from="UI/MenuPausa/VBoxContainer/BtnSalirMenu" to="UI/MenuPausa" method="_on_btn_salir_menu_pressed"]

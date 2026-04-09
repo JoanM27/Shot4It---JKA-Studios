@@ -17,6 +17,10 @@ var posicion_inicial: Vector2
 @onready var barra_recarga =  $Recarga
 @onready var animar_explosion = $Explosion
 
+# --- sonido propulsor --#
+@onready var sonido_propulsor = $SonidoPropulsor
+
+
 # --- Nodos de Interfaz (Corazones) ---
 @onready var corazon1 = $Corazones/Corazon1
 @onready var corazon2 = $Corazones/Corazon2
@@ -61,6 +65,8 @@ var esta_recargando: bool = false
 
 
 func _ready():
+	
+	sonido_propulsor.play()
 	
 	if id_jugador == 1:
 		etiqueta_nombre.text = Global.nombre_j1
@@ -136,6 +142,7 @@ func _physics_process(delta: float) -> void:
 		
 		# Verificamos si chocamos contra la otra nave
 		if collider and "id_jugador" in collider:
+			Audio.reproducir("choque")
 			
 			# 1. DIRECCIÓN (Centro a Centro): Perfecto para hitboxes circulares
 			var direccion_escape = (global_position - collider.global_position).normalized()
@@ -159,7 +166,10 @@ func _physics_process(delta: float) -> void:
 			
 			# Rebotamos contra la pared (con un poco menos de fuerza para no perder el control)
 			velocity = normal_pared * (REBOTE_BASE * 0.5 + fuerza_impacto * 0.4)
-
+	if direccion != Vector2.ZERO:
+		sonido_propulsor.pitch_scale = lerp(sonido_propulsor.pitch_scale, 6.0, 0.1)
+	else:
+		sonido_propulsor.pitch_scale = lerp(sonido_propulsor.pitch_scale, 1.0, 0.1)
 
 func _process(delta: float) -> void:
 	
@@ -201,6 +211,7 @@ func intentar_disparar():
 func iniciar_recarga():
 	if esta_recargando: return
 	esta_recargando = true
+	Audio.reproducir("recarga")
 	print("Recargando...")
 	timer_recarga.start(tiempo_recarga)
 
@@ -211,6 +222,7 @@ func _finalizar_recarga():
 
 # --- SISTEMA DE DAÑO Y MUERTE ---
 func recibir_dano(cantidad: int):
+	Audio.reproducir("dano")
 	if es_invulnerable or salud_actual <= 0: return
 	
 	salud_actual -= cantidad
@@ -232,6 +244,7 @@ func efecto_parpadeo_dano():
 		tween.tween_property(animar_nave, "modulate", Color(1, 1, 1), 0.1)     # Normal
 
 func morir():
+	Audio.reproducir("muerte")
 	print("Jugador ", id_jugador, " ha muerto.")
 	get_tree().call_group("cerebro", "registrar_muerte", id_jugador)
 	animar_propulsor.visible = false
@@ -241,6 +254,7 @@ func morir():
 	$CollisionShape2D.set_deferred("disabled", true)
 	
 	# Reproducir animación de explosión en la posición de la nave
+	sonido_propulsor.stop()
 	animar_explosion.visible = true
 	# Asegurar que la animación empiece desde el primer frame
 	animar_explosion.frame = 0 
@@ -254,11 +268,13 @@ func morir():
 	reaparecer()
 
 func reaparecer():
+	Audio.reproducir("reaparecer")
 	salud_actual = salud_maxima
 	actualizar_corazones()
 	municion_actual = municion_maxima
 	animar_nave.modulate = Color(1, 1, 1)
 	animar_propulsor.visible = true
+	sonido_propulsor.play()
 	
 	# 1. Matamos cualquier inercia fantasma que haya quedado
 	velocity = Vector2.ZERO
@@ -296,6 +312,7 @@ func disparar() -> void:
 	nueva_bala.sufijo_color = sufijo_color
 	nueva_bala.id_dueno = id_jugador
 	
+	Audio.reproducir("disparo")
 	get_tree().root.add_child(nueva_bala)
 
 func actualizar_corazones():

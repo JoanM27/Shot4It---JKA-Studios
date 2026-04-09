@@ -7,29 +7,36 @@ extends Control
 # Referencias a los campos de texto
 @onready var input_j1 = $"PantallaSelección/LadoJ1/InputNombreJ1"
 @onready var input_j2 = $"PantallaSelección/LadoJ2/InputNombreJ2"
+@onready var sonido_menu = $Sonido_menu
 
 func _ready() -> void:
 	# Al arrancar, mostramos el inicio y ocultamos la selección
+	sonido_menu.play()
 	pantalla_inicio.visible = true
 	pantalla_seleccion.visible = false
 
 # --- BOTONES DE LA PANTALLA INICIO ---
 func _on_btn_jugar_pressed() -> void:
+	Audio.reproducir("menu")
 	pantalla_inicio.visible = false
 	pantalla_seleccion.visible = true
 
 func _on_btn_salir_pressed() -> void:
+	Audio.reproducir("menu")
 	get_tree().quit()
 
 # --- BOTONES DE LA PANTALLA SELECCIÓN ---
 func _on_btn_volver_pressed() -> void:
+	Audio.reproducir("menu")
 	pantalla_seleccion.visible = false
 	pantalla_inicio.visible = true
 
 func _on_btn_normal_pressed() -> void:
+	Audio.reproducir("menu")
 	iniciar_juego(false) # false = Dos Mandos
 
 func _on_btn_hibrido_pressed() -> void:
+	Audio.reproducir("menu")
 	iniciar_juego(true) # true = Teclado vs Mando
 
 # Función que guarda nombres y cambia de escena
