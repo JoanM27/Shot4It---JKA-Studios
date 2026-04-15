@@ -21,6 +21,7 @@ motion_scale = Vector2(0, 0)
 motion_mirroring = Vector2(0, 580)
 
 [node name="FondoOscuro2" type="Sprite2D" parent="Fondo/FondoOscuro" unique_id=40378269]
+modulate = Color(0.67, 0.67, 0.67, 1)
 texture = ExtResource("1_wgmnp")
 
 [node name="Nebulosas" type="ParallaxLayer" parent="Fondo" unique_id=1339146178]

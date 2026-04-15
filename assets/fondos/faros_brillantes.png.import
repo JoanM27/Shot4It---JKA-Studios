@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sv4jgoaiewrr"
-path="res://.godot/imported/meteoros.png-b20908ac09056fa7c0b4c8caef5fa37f.ctex"
+uid="uid://db4eaei4l68fm"
+path="res://.godot/imported/faros_brillantes.png-2bd985acfcdfbdcad983aa69d45d2b7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/meteoros/meteoros.png"
-dest_files=["res://.godot/imported/meteoros.png-b20908ac09056fa7c0b4c8caef5fa37f.ctex"]
+source_file="res://assets/fondos/faros_brillantes.png"
+dest_files=["res://.godot/imported/faros_brillantes.png-2bd985acfcdfbdcad983aa69d45d2b7d.ctex"]
 
 [params]
 

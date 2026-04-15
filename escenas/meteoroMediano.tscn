@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://dlcu3da460c4x"]
 
 [ext_resource type="Script" uid="uid://dn8oqd3jhxf3j" path="res://scripts/meteoro_mediano.gd" id="1_4wfrq"]
-[ext_resource type="Texture2D" uid="uid://dtwrrmimbbhs7" path="res://assets/meteoros/Meteoros.png" id="1_kehrt"]
+[ext_resource type="Texture2D" uid="uid://sv4jgoaiewrr" path="res://assets/meteoros/meteoros.png" id="1_kehrt"]
 [ext_resource type="Texture2D" uid="uid://b55uijxt5fqhi" path="res://assets/efectos/Polvo.png" id="3_lqudy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ltx0b"]
 atlas = ExtResource("1_kehrt")
-region = Rect2(38.754776, 36.84029, 19.847778, 21.58881)
+region = Rect2(34.53457, 33.637398, 27.738785, 28.31187)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d0d77"]
 radius = 12.486024
@@ -100,7 +100,7 @@ animations = [{
 collision_layer = 32769
 collision_mask = 32769
 script = ExtResource("1_4wfrq")
-min_velocidad = 70.0
+min_velocidad = 80.0
 max_velocidad = 110.0
 puntos_dano = 2
 
@@ -115,7 +115,7 @@ shape = SubResource("CapsuleShape2D_d0d77")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2090442668]
 
 [node name="Destruccion" type="AnimatedSprite2D" parent="." unique_id=959629725]
-modulate = Color(0.8745098, 0.5294118, 0.1764706, 1)
+modulate = Color(0.2784314, 0.27058825, 0.30980393, 1)
 sprite_frames = SubResource("SpriteFrames_nms4r")
 animation = &"destruccion"
 frame = 10

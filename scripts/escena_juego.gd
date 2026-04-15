@@ -158,4 +158,4 @@ func _on_btn_menu_pressed() -> void:
 	get_tree().paused = false
 	# Aquí pondrás la ruta de la escena de tu menú principal cuando la crees
 	print("Yendo al menú principal...") 
-	# get_tree().change_scene_to_file("res://escenas/MenuPrincipal.tscn")
+	get_tree().change_scene_to_file("res://escenas/menu_principal.tscn")

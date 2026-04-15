@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db4eaei4l68fm"
-path="res://.godot/imported/faros_brillantes.png-47119c7c066928025e7fd7c0cc99801c.ctex"
+uid="uid://cbrw7pmei74ds"
+path="res://.godot/imported/Fondo_Principal.png-adfacd4ab233a018cea874e703034d26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/efectos/faros_brillantes.png"
-dest_files=["res://.godot/imported/faros_brillantes.png-47119c7c066928025e7fd7c0cc99801c.ctex"]
+source_file="res://assets/fondos/Fondo_Principal.png"
+dest_files=["res://.godot/imported/Fondo_Principal.png-adfacd4ab233a018cea874e703034d26.ctex"]
 
 [params]
 

@@ -48,7 +48,7 @@ var volumenes = {
 	"connect4": 0.0,
 	"pausa": -5.0,
 	"menu": -8.0,     # Bajito para que el clic sea un detalle sutil
-	"recarga": -4.0
+	"recarga": -10.0
 }
 # 3. FUNCIÓN REPRODUCTORA
 func reproducir(nombre: String, variar_tono: bool = false) -> void:

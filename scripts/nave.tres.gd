@@ -326,8 +326,8 @@ func actualizar_corazones():
 			3:
 				lista_corazones[i].frame = 0 # Lleno
 			2:
-				lista_corazones[i].frame = 2 # Falta un tercio
+				lista_corazones[i].frame = 1 # Falta un tercio
 			1:
-				lista_corazones[i].frame = 1 # Queda un tercio
+				lista_corazones[i].frame = 2 # Queda un tercio
 			0:
 				lista_corazones[i].frame = 3 # Roto / Vacío

@@ -3,10 +3,16 @@ extends Area2D
 # Exportamos las variables para que puedas ajustar la velocidad base desde el Inspector
 @export var min_velocidad: float = 150.0
 @export var max_velocidad: float = 350.0
+@export var min_rotacion: float = -0.8  
+@export var max_rotacion: float = 0.8   
 @export var puntos_dano: int = 1
+
+@export var min_velocidad_x: float = -100.0 
+@export var max_velocidad_x: float = 100.0  
 
 var velocidad_caida: float
 var velocidad_rotacion: float
+var velocidad_horizontal: float
 
 # --- NUEVAS VARIABLES ---
 var destruido: bool = false # Evita que el código se ejecute dos veces
@@ -17,7 +23,8 @@ var destruido: bool = false # Evita que el código se ejecute dos veces
 func _ready() -> void:
 	# Aleatorizamos un poco su comportamiento
 	velocidad_caida = randf_range(min_velocidad, max_velocidad)
-	velocidad_rotacion = randf_range(-3.0, 3.0) 
+	velocidad_rotacion = randf_range(min_rotacion, max_rotacion)
+	velocidad_horizontal = randf_range(min_velocidad_x, max_velocidad_x)
 	
 	# Aseguramos que la explosión esté oculta al aparecer
 	anim_destruccion.visible = false
@@ -32,7 +39,8 @@ func _physics_process(delta: float) -> void:
 	if destruido: return
 	
 	# Caer y girar
-	global_position.y += velocidad_caida * delta
+	global_position.x += velocidad_horizontal * delta # Mueve a los lados
+	global_position.y += velocidad_caida * delta      # Mueve hacia abajota
 	rotation += velocidad_rotacion * delta
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:

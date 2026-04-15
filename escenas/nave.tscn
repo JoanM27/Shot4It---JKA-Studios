@@ -145,13 +145,13 @@ region = Rect2(0, 0, 16, 16)
 atlas = ExtResource("8_0g7gu")
 region = Rect2(48, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_13yug"]
-atlas = ExtResource("8_0g7gu")
-region = Rect2(16, 16, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_lg1jf"]
 atlas = ExtResource("8_0g7gu")
 region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13yug"]
+atlas = ExtResource("8_0g7gu")
+region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pledy"]
 atlas = ExtResource("8_0g7gu")
@@ -176,7 +176,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_piia2")
 }],
-"loop": true,
+"loop": false,
 "name": &"corazon_estandar_amarillo",
 "speed": 5.0
 }, {
@@ -185,15 +185,15 @@ animations = [{
 "texture": SubResource("AtlasTexture_s51y0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_13yug")
+"texture": SubResource("AtlasTexture_lg1jf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lg1jf")
+"texture": SubResource("AtlasTexture_13yug")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pledy")
 }],
-"loop": true,
+"loop": false,
 "name": &"corazon_estandar_azul",
 "speed": 5.0
 }, {
@@ -332,7 +332,6 @@ position = Vector2(14.285714, 0)
 scale = Vector2(0.9999998, 0.9999998)
 sprite_frames = SubResource("SpriteFrames_btn3i")
 animation = &"corazon_estandar_azul"
-frame_progress = 0.34729108
 
 [node name="Corazon3" type="AnimatedSprite2D" parent="Corazones" unique_id=88979903]
 position = Vector2(28.571426, -0.255102)

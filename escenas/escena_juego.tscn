@@ -23,14 +23,6 @@ font = ExtResource("2_negk1")
 [sub_resource type="LabelSettings" id="LabelSettings_dti2p"]
 font = ExtResource("2_negk1")
 
-[sub_resource type="LabelSettings" id="LabelSettings_d05fw"]
-font = ExtResource("2_negk1")
-font_size = 20
-
-[sub_resource type="LabelSettings" id="LabelSettings_sndxu"]
-font = ExtResource("2_negk1")
-font_size = 14
-
 [sub_resource type="LabelSettings" id="LabelSettings_g4g1k"]
 font = ExtResource("2_negk1")
 font_size = 8
@@ -44,6 +36,14 @@ font_size = 8
 font_color = Color(0.069404274, 0.94882065, 0.965625, 1)
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d05fw"]
+font = ExtResource("2_negk1")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_sndxu"]
+font = ExtResource("2_negk1")
+font_size = 14
 
 [sub_resource type="Animation" id="Animation_4c8py"]
 length = 0.001
@@ -173,6 +173,55 @@ scale = Vector2(0.50817674, 0.50817674)
 text = "Puntos J2:"
 label_settings = SubResource("LabelSettings_dti2p")
 
+[node name="Eventos" type="Control" parent="UI" unique_id=932361262]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="TextoEvento1" type="Label" parent="UI/Eventos" unique_id=951183408]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -296.0
+offset_top = -132.0
+offset_right = -237.0
+offset_bottom = -114.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(43, 13)
+text = "Got it!"
+label_settings = SubResource("LabelSettings_g4g1k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextoEvento2" type="Label" parent="UI/Eventos" unique_id=1884834820]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -130.0
+offset_right = -65.0
+offset_bottom = -112.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Got it!"
+label_settings = SubResource("LabelSettings_x8shv")
+horizontal_alignment = 1
+
 [node name="PantallaVictoria" type="Control" parent="UI" unique_id=614524342]
 process_mode = 3
 visible = false
@@ -251,55 +300,6 @@ offset_bottom = 174.6387
 scale = Vector2(0.5708903, 0.5708903)
 theme_override_fonts/font = ExtResource("2_negk1")
 text = "Salir al Menú Principal"
-
-[node name="Eventos" type="Control" parent="UI" unique_id=932361262]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
-metadata/_edit_use_anchors_ = true
-
-[node name="TextoEvento1" type="Label" parent="UI/Eventos" unique_id=951183408]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -296.0
-offset_top = -132.0
-offset_right = -237.0
-offset_bottom = -114.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(43, 13)
-text = "Got it!"
-label_settings = SubResource("LabelSettings_g4g1k")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextoEvento2" type="Label" parent="UI/Eventos" unique_id=1884834820]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -124.0
-offset_top = -130.0
-offset_right = -65.0
-offset_bottom = -112.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Got it!"
-label_settings = SubResource("LabelSettings_x8shv")
-horizontal_alignment = 1
 
 [node name="MenuPausa" type="Control" parent="UI" unique_id=61151969]
 process_mode = 3
