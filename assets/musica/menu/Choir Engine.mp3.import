@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://btd2gq7nf6y4j"
+path="res://.godot/imported/Choir Engine.mp3-6d2a1ad87775b47ad3f82fc3223431eb.mp3str"
+
+[deps]
+
+source_file="res://assets/musica/menu/Choir Engine.mp3"
+dest_files=["res://.godot/imported/Choir Engine.mp3-6d2a1ad87775b47ad3f82fc3223431eb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

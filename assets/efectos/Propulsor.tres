@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dx24q8h5xxv58"]
+
+[ext_resource type="Texture2D" uid="uid://j8ahpfruxcrg" path="res://assets/efectos/llama_propulsor.png" id="1_rx3qx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oupo"]
+atlas = ExtResource("1_rx3qx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w50ra"]
+atlas = ExtResource("1_rx3qx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58cm6"]
+atlas = ExtResource("1_rx3qx")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_piia2"]
+atlas = ExtResource("1_rx3qx")
+region = Rect2(32, 32, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7oupo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w50ra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58cm6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_piia2")
+}],
+"loop": true,
+"name": &"estandar",
+"speed": 11.0
+}]

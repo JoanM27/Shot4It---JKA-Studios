@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bop6xo4qlh8u3"]
+
+[ext_resource type="Script" uid="uid://ds2ocdeo480o4" path="res://scripts/escenarios/prueba.gd" id="1_8tvvv"]
+[ext_resource type="Script" uid="uid://b64k7443wm08i" path="res://scripts/escenarios/camera_2d.gd" id="2_kclmm"]
+[ext_resource type="PackedScene" uid="uid://bp54p3snnl65s" path="res://escenas/escenarios/escena_juego.tscn" id="3_82i2f"]
+[ext_resource type="PackedScene" uid="uid://c8j3ti1r2eany" path="res://escenas/fondos/fondo.tscn" id="4_iipkv"]
+
+[node name="Nivel_1" type="Node2D" unique_id=1436926508]
+script = ExtResource("1_8tvvv")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=431170223]
+script = ExtResource("2_kclmm")
+
+[node name="Escena_Juego" parent="Camera2D" unique_id=1566723946 instance=ExtResource("3_82i2f")]
+
+[node name="Fondo" parent="." unique_id=1836239138 instance=ExtResource("4_iipkv")]

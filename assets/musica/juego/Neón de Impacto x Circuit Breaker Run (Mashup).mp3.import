@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://gst2higycrhu"
+path="res://.godot/imported/Neón de Impacto x Circuit Breaker Run (Mashup).mp3-dda40c794feec8f7b4d670e343f7c8ac.mp3str"
+
+[deps]
+
+source_file="res://assets/musica/juego/Neón de Impacto x Circuit Breaker Run (Mashup).mp3"
+dest_files=["res://.godot/imported/Neón de Impacto x Circuit Breaker Run (Mashup).mp3-dda40c794feec8f7b4d670e343f7c8ac.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

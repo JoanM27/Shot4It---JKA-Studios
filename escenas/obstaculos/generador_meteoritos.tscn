@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ca8u631030qr5"]
+
+[ext_resource type="Script" uid="uid://bppqfkthtpthe" path="res://generador_meteoritos.gd" id="1_2c75l"]
+[ext_resource type="PackedScene" uid="uid://berfe7akj6gsc" path="res://escenas/obstaculos/meteoroPequeno.tscn" id="2_emp62"]
+[ext_resource type="PackedScene" uid="uid://dlcu3da460c4x" path="res://escenas/obstaculos/meteoroMediano.tscn" id="3_immmm"]
+[ext_resource type="PackedScene" uid="uid://b6kfpu44d1ujp" path="res://escenas/obstaculos/meteoroGrande.tscn" id="4_kc1r5"]
+
+[node name="GeneradorMeteoritos" type="Node2D" unique_id=1779785500]
+script = ExtResource("1_2c75l")
+meteoritos = Array[PackedScene]([ExtResource("2_emp62"), ExtResource("3_immmm"), ExtResource("4_kc1r5")])
+
+[node name="Timer" type="Timer" parent="." unique_id=1972177677]
+wait_time = 20.0
+autostart = true

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://baphgkiyguysu"]
+
+[ext_resource type="PackedScene" uid="uid://bp54p3snnl65s" path="res://escenas/escenarios/escena_juego.tscn" id="1_vqiou"]
+[ext_resource type="PackedScene" uid="uid://c8j3ti1r2eany" path="res://escenas/fondos/fondo.tscn" id="2_a3yrq"]
+[ext_resource type="PackedScene" uid="uid://ca8u631030qr5" path="res://escenas/obstaculos/generador_meteoritos.tscn" id="3_7nn6p"]
+[ext_resource type="PackedScene" uid="uid://4f4j5qkjvtvg" path="res://escenas/fondos/capa_efecto_velocidad.tscn" id="4_g48av"]
+
+[node name="Nivel_1" type="Node2D" unique_id=1101148157]
+
+[node name="Escena_Juego" parent="." unique_id=1566723946 instance=ExtResource("1_vqiou")]
+scale = Vector2(0.26751256, 0.26751256)
+
+[node name="Fondo" parent="." unique_id=1350129918 instance=ExtResource("2_a3yrq")]
+
+[node name="GeneradorMeteoritos" parent="." unique_id=1779785500 instance=ExtResource("3_7nn6p")]
+
+[node name="CapaEfectoVelocidad" parent="." unique_id=1445391867 instance=ExtResource("4_g48av")]

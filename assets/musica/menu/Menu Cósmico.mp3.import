@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://tnuleht2i2wp"
+path="res://.godot/imported/Menu Cósmico.mp3-b1a70dcef3742c78dbdf0d75e99bcfdd.mp3str"
+
+[deps]
+
+source_file="res://assets/musica/menu/Menu Cósmico.mp3"
+dest_files=["res://.godot/imported/Menu Cósmico.mp3-b1a70dcef3742c78dbdf0d75e99bcfdd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

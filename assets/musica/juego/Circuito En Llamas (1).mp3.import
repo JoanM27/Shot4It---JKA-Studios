@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bi2ek58ihldxg"
+path="res://.godot/imported/Circuito En Llamas (1).mp3-899558a2026261f509b0575e72f52248.mp3str"
+
+[deps]
+
+source_file="res://assets/musica/juego/Circuito En Llamas (1).mp3"
+dest_files=["res://.godot/imported/Circuito En Llamas (1).mp3-899558a2026261f509b0575e72f52248.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

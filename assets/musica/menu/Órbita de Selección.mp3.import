@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cspjhuchq8wa3"
+path="res://.godot/imported/Órbita de Selección.mp3-1db5173c5b0a3ed79f2f79021e2c1e6b.mp3str"
+
+[deps]
+
+source_file="res://assets/musica/menu/Órbita de Selección.mp3"
+dest_files=["res://.godot/imported/Órbita de Selección.mp3-1db5173c5b0a3ed79f2f79021e2c1e6b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

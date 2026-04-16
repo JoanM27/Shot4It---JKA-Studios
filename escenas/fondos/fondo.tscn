@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://c8j3ti1r2eany"]
+
+[ext_resource type="Script" uid="uid://diw4wbvnxyief" path="res://scripts/escenarios/fondo.gd" id="1_mnt6w"]
+[ext_resource type="Texture2D" uid="uid://db7mu61dvmrgf" path="res://assets/fondos/Fondo_oscuro.png" id="1_wgmnp"]
+[ext_resource type="Texture2D" uid="uid://j4hqs2xe7ct5" path="res://assets/fondos/nebulosas_1.png" id="2_i4ada"]
+[ext_resource type="Texture2D" uid="uid://e7fptanhogvv" path="res://assets/fondos/nebulosas_2.png" id="3_mnt6w"]
+[ext_resource type="Texture2D" uid="uid://dxe64d61pce8r" path="res://assets/fondos/estrellas_brillantes.png" id="4_ejs1y"]
+[ext_resource type="Texture2D" uid="uid://qunyei7cqm2n" path="res://assets/fondos/estrellas_medianas.png" id="5_hgrue"]
+[ext_resource type="Texture2D" uid="uid://254p3u1xtslc" path="res://assets/fondos/estrellas_oscuras.png" id="6_bfekk"]
+[ext_resource type="Texture2D" uid="uid://bwxhqpvgfxe55" path="res://assets/fondos/Planetas_lejanos.png" id="7_b1mu5"]
+[ext_resource type="Texture2D" uid="uid://dvl6xtuh8ecpi" path="res://assets/fondos/planetas_cercanos.png" id="8_vimh7"]
+
+[node name="Fondo" type="Node2D" unique_id=1350129918]
+
+[node name="Fondo" type="ParallaxBackground" parent="." unique_id=1836239138]
+script = ExtResource("1_mnt6w")
+
+[node name="FondoOscuro" type="ParallaxLayer" parent="Fondo" unique_id=1084633960]
+position = Vector2(256, 0)
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(0, 580)
+
+[node name="FondoOscuro2" type="Sprite2D" parent="Fondo/FondoOscuro" unique_id=40378269]
+modulate = Color(0.67, 0.67, 0.67, 1)
+texture = ExtResource("1_wgmnp")
+
+[node name="Nebulosas" type="ParallaxLayer" parent="Fondo" unique_id=1339146178]
+position = Vector2(256, 0)
+motion_scale = Vector2(0, 0.2)
+motion_mirroring = Vector2(0, 580)
+
+[node name="Nebulosas1" type="Sprite2D" parent="Fondo/Nebulosas" unique_id=626725830]
+texture = ExtResource("2_i4ada")
+region_rect = Rect2(0, 0, 1024, 1024)
+
+[node name="Nebulosas2" type="Sprite2D" parent="Fondo/Nebulosas" unique_id=819091436]
+texture = ExtResource("3_mnt6w")
+region_rect = Rect2(0, 0, 1024, 1024)
+
+[node name="Estrellas" type="ParallaxLayer" parent="Fondo" unique_id=1439738263]
+position = Vector2(256, 0)
+motion_scale = Vector2(0, 0.4)
+motion_mirroring = Vector2(0, 580)
+
+[node name="EstrellasBrillantes" type="Sprite2D" parent="Fondo/Estrellas" unique_id=607100462]
+texture = ExtResource("4_ejs1y")
+region_rect = Rect2(0, 0, 1024, 1024)
+
+[node name="EstrellasMedianas" type="Sprite2D" parent="Fondo/Estrellas" unique_id=297622343]
+texture = ExtResource("5_hgrue")
+region_rect = Rect2(0, 0, 1024, 1024)
+
+[node name="EstrellasOscuras" type="Sprite2D" parent="Fondo/Estrellas" unique_id=728835159]
+texture = ExtResource("6_bfekk")
+region_rect = Rect2(0, 0, 1024, 1024)
+
+[node name="PlanetasLejanos" type="ParallaxLayer" parent="Fondo" unique_id=450957873]
+position = Vector2(256, 0)
+motion_scale = Vector2(0, 0.6)
+motion_mirroring = Vector2(0, 700)
+
+[node name="PlanetasLejanos2" type="Sprite2D" parent="Fondo/PlanetasLejanos" unique_id=2022829307]
+texture = ExtResource("7_b1mu5")
+region_rect = Rect2(0, 0, 1024, 1024)
+
+[node name="PlanetasCercanos" type="ParallaxLayer" parent="Fondo" unique_id=1021032394]
+position = Vector2(256, 0)
+motion_scale = Vector2(0, 0.8)
+motion_mirroring = Vector2(0, 2000)
+
+[node name="PlanetasCercanos2" type="Sprite2D" parent="Fondo/PlanetasCercanos" unique_id=954773975]
+texture = ExtResource("8_vimh7")
+region_rect = Rect2(0, 0, 1024, 1024)
